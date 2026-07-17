@@ -47,6 +47,29 @@ final class GoalsStore {
         didChange?()
     }
 
+    /// Actualiza el peso actual del perfil (lo usa Mifflin-St Jeor) y sincroniza.
+    /// NO recalcula las metas: eso lo decide el usuario (recalcGoalsFromProfile).
+    func updateWeight(_ kg: Double) {
+        guard var profile else { return }
+        profile.weightKg = kg
+        self.profile = profile
+        didChange?()
+    }
+
+    /// Recalcula las metas con el perfil actual (peso + objetivo), tomando el
+    /// plan recomendado de Mifflin-St Jeor. El usuario lo dispara a mano.
+    /// Devuelve false si no hay perfil (onboarding incompleto).
+    @discardableResult
+    func recalcGoalsFromProfile() -> Bool {
+        guard let profile else { return false }
+        let options = PlanCalculator.options(for: profile)
+        guard let plan = options.first(where: \.isRecommended) ?? options.first else {
+            return false
+        }
+        apply(plan: plan, profile: profile)
+        return true
+    }
+
     private func persist(_ value: (some Encodable)?, key: String) {
         guard let value, let data = try? JSONEncoder().encode(value) else {
             UserDefaults.standard.removeObject(forKey: key)

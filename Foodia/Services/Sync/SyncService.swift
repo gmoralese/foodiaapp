@@ -16,6 +16,7 @@ final class SyncService {
     private var profilePushTask: Task<Void, Never>?
 
     private let deletionsKey = "pendingMealDeletions"
+    private let measurementDeletionsKey = "pendingMeasurementDeletions"
 
     private init() {}
 
@@ -35,6 +36,15 @@ final class SyncService {
         var pending = UserDefaults.standard.stringArray(forKey: deletionsKey) ?? []
         pending.append(remoteMealID.uuidString)
         UserDefaults.standard.set(pending, forKey: deletionsKey)
+        syncNow()
+    }
+
+    /// Marca la medición remota para borrar (si ya estaba sincronizada) y sincroniza.
+    func deleteRemoteMeasurement(_ remoteID: UUID?) {
+        guard let remoteID else { return }
+        var pending = UserDefaults.standard.stringArray(forKey: measurementDeletionsKey) ?? []
+        pending.append(remoteID.uuidString)
+        UserDefaults.standard.set(pending, forKey: measurementDeletionsKey)
         syncNow()
     }
 
@@ -73,6 +83,7 @@ final class SyncService {
     /// "Eliminar todos mis datos". Best-effort.
     func wipeRemote() {
         UserDefaults.standard.removeObject(forKey: deletionsKey)
+        UserDefaults.standard.removeObject(forKey: measurementDeletionsKey)
         Task {
             while let page = try? await BackendClient.shared.meals(cursor: nil),
                   !page.items.isEmpty {
@@ -88,6 +99,13 @@ final class SyncService {
                 }
                 if page.nextCursor == nil { break }
             }
+            while let page = try? await BackendClient.shared.measurements(cursor: nil),
+                  !page.items.isEmpty {
+                for entry in page.items {
+                    try? await BackendClient.shared.deleteMeasurement(id: entry.id)
+                }
+                if page.nextCursor == nil { break }
+            }
         }
     }
 
@@ -99,9 +117,11 @@ final class SyncService {
         defer { syncing = false }
         let context = container.mainContext
         await drainDeletions()
+        await drainMeasurementDeletions()
         await backfillIfNeeded(context)
         await pushPendingMeals(context)
         await pushPendingWater(context)
+        await pushPendingMeasurements(context)
     }
 
     private func drainDeletions() async {
@@ -120,6 +140,24 @@ final class SyncService {
             }
         }
         UserDefaults.standard.set(pending, forKey: deletionsKey)
+    }
+
+    private func drainMeasurementDeletions() async {
+        var pending = UserDefaults.standard.stringArray(forKey: measurementDeletionsKey) ?? []
+        guard !pending.isEmpty else { return }
+        for raw in pending {
+            guard let id = UUID(uuidString: raw) else {
+                pending.removeAll { $0 == raw }
+                continue
+            }
+            do {
+                try await BackendClient.shared.deleteMeasurement(id: id)
+                pending.removeAll { $0 == raw }
+            } catch {
+                break
+            }
+        }
+        UserDefaults.standard.set(pending, forKey: measurementDeletionsKey)
     }
 
     // MARK: Push de pendientes
@@ -197,6 +235,35 @@ final class SyncService {
         try? context.save()
     }
 
+    private func pushPendingMeasurements(_ context: ModelContext) async {
+        let descriptor = FetchDescriptor<BodyMeasurement>(
+            predicate: #Predicate { $0.needsSync }
+        )
+        guard let entries = try? context.fetch(descriptor), !entries.isEmpty else { return }
+        for entry in entries {
+            do {
+                let remote = try await BackendClient.shared.createMeasurement(
+                    CreateMeasurementPayload(
+                        measuredAt: entry.measuredAt,
+                        weightKg: entry.weightKg,
+                        waistCm: entry.waistCm,
+                        hipCm: entry.hipCm,
+                        chestCm: entry.chestCm,
+                        armCm: entry.armCm,
+                        thighCm: entry.thighCm,
+                        neckCm: entry.neckCm,
+                        bodyFatPct: entry.bodyFatPct
+                    )
+                )
+                entry.remoteID = remote.id
+                entry.needsSync = false
+            } catch {
+                break
+            }
+        }
+        try? context.save()
+    }
+
     // MARK: Backfill (restauración en dispositivo nuevo)
 
     private func backfillIfNeeded(_ context: ModelContext) async {
@@ -250,6 +317,32 @@ final class SyncService {
                         milliliters: entry.milliliters
                     )
                     local.remoteID = entry.id
+                    local.needsSync = false
+                    context.insert(local)
+                }
+                cursor = page.nextCursor
+            } while cursor != nil
+
+            let knownMeasurements = Set(
+                (try context.fetch(FetchDescriptor<BodyMeasurement>()))
+                    .compactMap(\.remoteID)
+            )
+            cursor = nil
+            repeat {
+                let page = try await BackendClient.shared.measurements(cursor: cursor)
+                for measurement in page.items where !knownMeasurements.contains(measurement.id) {
+                    let local = BodyMeasurement(
+                        measuredAt: measurement.measuredAt,
+                        weightKg: measurement.weightKg,
+                        waistCm: measurement.waistCm,
+                        hipCm: measurement.hipCm,
+                        chestCm: measurement.chestCm,
+                        armCm: measurement.armCm,
+                        thighCm: measurement.thighCm,
+                        neckCm: measurement.neckCm,
+                        bodyFatPct: measurement.bodyFatPct
+                    )
+                    local.remoteID = measurement.id
                     local.needsSync = false
                     context.insert(local)
                 }

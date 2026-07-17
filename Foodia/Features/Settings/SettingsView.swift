@@ -11,6 +11,7 @@ struct SettingsView: View {
     @State private var reminderDenied = false
     @State private var vlmManager = VLMModelManager.shared
     @State private var showMetasSheet = false
+    @State private var showBodyMeasurements = false
     @State private var confirmDeleteModel = false
     @State private var promptDownloadForLocal = false
     @State private var confirmWipe = false
@@ -30,6 +31,7 @@ struct SettingsView: View {
                 engineSection
                 modelCard
                 metasSection
+                bodyMeasurementsSection
                 regionSection
                 healthSection
                 remindersSection
@@ -42,6 +44,9 @@ struct SettingsView: View {
         .background(Color.dsBackground)
         .sheet(isPresented: $showMetasSheet) {
             MetasSheet()
+        }
+        .sheet(isPresented: $showBodyMeasurements) {
+            BodyMeasurementsSheet()
         }
         .sheet(item: $exportURL) { url in
             ExportSheet(url: url)
@@ -231,6 +236,23 @@ struct SettingsView: View {
                 ) {
                     showMetasSheet = true
                 }
+            }
+            .background(Color.dsCard, in: .rect(cornerRadius: DSRadius.card, style: .continuous))
+        }
+    }
+
+    // MARK: Peso y medidas
+
+    private var profileWeightHint: String? {
+        guard let weight = GoalsStore.shared.profile?.weightKg else { return nil }
+        return "\(measurementText(weight)) kg"
+    }
+
+    private var bodyMeasurementsSection: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            sectionLabel("PESO Y MEDIDAS")
+            navRow(title: "Peso y medidas", value: profileWeightHint) {
+                showBodyMeasurements = true
             }
             .background(Color.dsCard, in: .rect(cornerRadius: DSRadius.card, style: .continuous))
         }

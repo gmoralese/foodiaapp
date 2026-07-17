@@ -63,6 +63,21 @@ struct BackendClient {
         try await delete("v1/water/\(id.uuidString.lowercased())")
     }
 
+    // MARK: Peso y medidas
+
+    @discardableResult
+    func createMeasurement(_ payload: CreateMeasurementPayload) async throws -> RemoteMeasurement {
+        try await send("POST", "v1/measurements", body: payload)
+    }
+
+    func measurements(cursor: String?, limit: Int = 50) async throws -> RemoteMeasurementPage {
+        try await get("v1/measurements", query: pageQuery(cursor: cursor, limit: limit))
+    }
+
+    func deleteMeasurement(id: UUID) async throws {
+        try await delete("v1/measurements/\(id.uuidString.lowercased())")
+    }
+
     // MARK: Plomería
 
     private func pageQuery(cursor: String?, limit: Int) -> [URLQueryItem] {
@@ -248,5 +263,37 @@ struct RemoteWaterEntry: Decodable {
 
 struct RemoteWaterPage: Decodable {
     let items: [RemoteWaterEntry]
+    let nextCursor: String?
+}
+
+/// Los campos nil se omiten al codificar (encodeIfPresent), así el backend no
+/// toca lo que no se envió. `measuredAt` siempre viaja.
+struct CreateMeasurementPayload: Encodable {
+    let measuredAt: Date
+    let weightKg: Double?
+    let waistCm: Double?
+    let hipCm: Double?
+    let chestCm: Double?
+    let armCm: Double?
+    let thighCm: Double?
+    let neckCm: Double?
+    let bodyFatPct: Double?
+}
+
+struct RemoteMeasurement: Decodable {
+    let id: UUID
+    let measuredAt: Date
+    let weightKg: Double?
+    let waistCm: Double?
+    let hipCm: Double?
+    let chestCm: Double?
+    let armCm: Double?
+    let thighCm: Double?
+    let neckCm: Double?
+    let bodyFatPct: Double?
+}
+
+struct RemoteMeasurementPage: Decodable {
+    let items: [RemoteMeasurement]
     let nextCursor: String?
 }

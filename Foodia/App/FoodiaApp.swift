@@ -5,7 +5,9 @@ import SwiftUI
 struct FoodiaApp: App {
     private let container: ModelContainer = {
         do {
-            let container = try ModelContainer(for: MealEntry.self, WaterEntry.self)
+            let container = try ModelContainer(
+                for: MealEntry.self, WaterEntry.self, BodyMeasurement.self
+            )
             #if DEBUG
             if ProcessInfo.processInfo.arguments.contains("-seedDemo") {
                 DemoSeeder.seed(container)
