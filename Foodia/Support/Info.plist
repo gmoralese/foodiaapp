@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BackendAPIKey</key>
+	<string>1121ee1a49cd58aa3ed0aafd652a57887514384cb3b86860</string>
+	<key>BackendURL</key>
+	<string>https://foodia-backend-317849322787.us-central1.run.app</string>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>CFBundleDisplayName</key>
+	<string>Foodia</string>
+	<key>CFBundleExecutable</key>
+	<string>$(EXECUTABLE_NAME)</string>
+	<key>CFBundleIdentifier</key>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>$(PRODUCT_NAME)</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0</string>
+	<key>CFBundleVersion</key>
+	<string>1</string>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsLocalNetworking</key>
+		<true/>
+	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>Foodia usa la cámara para fotografiar tu comida y estimar sus macros.</string>
+	<key>NSHealthShareUsageDescription</key>
+	<string>Foodia no lee datos de Salud; solo escribe tus comidas registradas.</string>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>Foodia escribe las calorías y macros de tus comidas en Apple Salud, si activas la sincronización.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Foodia usa el micrófono para que puedas dictar contexto sobre tu comida (por ejemplo, qué plato es o el tamaño de la porción).</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>Foodia transcribe tu voz en el iPhone para agregar contexto al análisis de la comida.</string>
+	<key>SupabasePublishableKey</key>
+	<string>sb_publishable_1zzh8YzYUxuqWQAGMjV5Mw_9Y-dYDDW</string>
+	<key>SupabaseURL</key>
+	<string>https://titegcedxvdgqshsicay.supabase.co</string>
+	<key>UILaunchScreen</key>
+	<dict/>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+	</array>
+</dict>
+</plist>

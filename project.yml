@@ -1,0 +1,114 @@
+name: Foodia
+options:
+  bundleIdPrefix: me.gusmorales
+  deploymentTarget:
+    iOS: "18.0"
+  createIntermediateGroups: true
+  developmentLanguage: es
+packages:
+  mlx-swift-lm:
+    url: https://github.com/ml-explore/mlx-swift-lm
+    from: 3.31.4
+  swift-huggingface:
+    url: https://github.com/huggingface/swift-huggingface
+    from: 0.9.0
+  swift-transformers:
+    url: https://github.com/huggingface/swift-transformers
+    from: 1.0.0
+  lucide-icons-swift:
+    url: https://github.com/JakubMazur/lucide-icons-swift
+    from: 1.24.0
+  supabase-swift:
+    url: https://github.com/supabase/supabase-swift
+    from: 2.52.0
+settings:
+  base:
+    SWIFT_VERSION: "6.0"
+    SWIFT_DEFAULT_ACTOR_ISOLATION: MainActor
+    SWIFT_APPROACHABLE_CONCURRENCY: "YES"
+    SWIFT_EMIT_LOC_STRINGS: "YES"
+    LOCALIZATION_PREFERS_STRING_CATALOGS: "YES"
+    # Los tokens de color viven en DSColor.swift; sin esto Xcode genera
+    # extensiones Color.dsAccent duplicadas (Invalid redeclaration).
+    ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS: "NO"
+    CODE_SIGN_STYLE: Automatic
+    DEVELOPMENT_TEAM: S23GC6A3K6
+    CURRENT_PROJECT_VERSION: 1
+    MARKETING_VERSION: 0.1.0
+targets:
+  Foodia:
+    type: application
+    platform: iOS
+    sources:
+      - path: Foodia
+    dependencies:
+      - target: FoodiaWidget
+      - package: mlx-swift-lm
+        product: MLXVLM
+      - package: mlx-swift-lm
+        product: MLXLMCommon
+      - package: mlx-swift-lm
+        product: MLXHuggingFace
+      - package: swift-huggingface
+        product: HuggingFace
+      - package: swift-transformers
+        product: Tokenizers
+      - package: lucide-icons-swift
+        product: LucideIcons
+      - package: supabase-swift
+        product: Supabase
+    scheme: {}
+    info:
+      path: Foodia/Support/Info.plist
+      properties:
+        CFBundleDisplayName: Foodia
+        NSCameraUsageDescription: "Foodia usa la cámara para fotografiar tu comida y estimar sus macros."
+        NSMicrophoneUsageDescription: "Foodia usa el micrófono para que puedas dictar contexto sobre tu comida (por ejemplo, qué plato es o el tamaño de la porción)."
+        NSHealthUpdateUsageDescription: "Foodia escribe las calorías y macros de tus comidas en Apple Salud, si activas la sincronización."
+        NSHealthShareUsageDescription: "Foodia no lee datos de Salud; solo escribe tus comidas registradas."
+        NSSpeechRecognitionUsageDescription: "Foodia transcribe tu voz en el iPhone para agregar contexto al análisis de la comida."
+        UILaunchScreen: {}
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+        ITSAppUsesNonExemptEncryption: false
+        # Motor "Nube": URL de Cloud Run + la misma API key que FOODIA_API_KEY
+        # del backend. Si cambia, editar acá y correr: xcodegen generate.
+        BackendURL: "https://foodia-backend-317849322787.us-central1.run.app"
+        BackendAPIKey: "1121ee1a49cd58aa3ed0aafd652a57887514384cb3b86860"
+        # Supabase Auth (key publishable: segura de embeber en el cliente).
+        SupabaseURL: "https://titegcedxvdgqshsicay.supabase.co"
+        SupabasePublishableKey: "sb_publishable_1zzh8YzYUxuqWQAGMjV5Mw_9Y-dYDDW"
+        # Permite probar contra http://localhost desde el simulador.
+        NSAppTransportSecurity:
+          NSAllowsLocalNetworking: true
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: me.gusmorales.foodia
+        TARGETED_DEVICE_FAMILY: "1"
+        CODE_SIGN_ENTITLEMENTS: Foodia/Support/Foodia.entitlements
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+  FoodiaWidget:
+    type: app-extension
+    platform: iOS
+    sources:
+      - path: FoodiaWidget
+      - path: Foodia/Shared
+    dependencies:
+      - package: lucide-icons-swift
+        product: LucideIcons
+    info:
+      path: FoodiaWidget/Info.plist
+      properties:
+        CFBundleDisplayName: Foodia
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.widgetkit-extension
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: me.gusmorales.foodia.FoodiaWidget
+        CODE_SIGN_ENTITLEMENTS: FoodiaWidget/FoodiaWidget.entitlements
+        TARGETED_DEVICE_FAMILY: "1"
+        SKIP_INSTALL: "YES"
+        # WidgetKit usa protocolos nonisolated; sin MainActor por defecto acá.
+        SWIFT_DEFAULT_ACTOR_ISOLATION: nonisolated
+        SWIFT_EMIT_LOC_STRINGS: "NO"

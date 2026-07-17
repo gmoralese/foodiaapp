@@ -1,0 +1,14 @@
+.DS_Store
+xcuserdata/
+*.xcuserstate
+DerivedData/
+build/
+.build/
+tools/vlm-harness/dd/
+
+# Proyecto Xcode generado por XcodeGen (fuente de verdad: project.yml).
+# Regenerar tras clonar con: xcodegen generate
+*.xcodeproj/
+
+# Ajustes locales de Claude Code (específicos de la máquina)
+.claude/settings.local.json
