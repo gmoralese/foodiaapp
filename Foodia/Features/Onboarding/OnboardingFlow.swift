@@ -33,6 +33,10 @@ struct FirstRunFlow: View {
                 }
         case .login:
             LoginView {
+                // Login fresco: la verdad del onboarding la decide el servidor
+                // en .preparing. No heredar un flag local viejo, que saltaría
+                // el onboarding aun con un perfil remoto incompleto.
+                hasOnboarded = false
                 withAnimation(.easeOut) { stage = .preparing }
             }
         case .preparing:
@@ -160,7 +164,9 @@ private struct OnboardingFlow: View {
                 ActivityStep(profile: $profile, onContinue: next).tag(3)
                 ObjectiveStep(profile: $profile, onContinue: next).tag(4)
                 PlanStep(profile: profile, skipped: skippedProfile, onContinue: next).tag(5)
-                CameraPermissionStep(onContinue: { onFinish() }).tag(6)
+                // next() en el último paso envía el PATCH onboardingCompleted=true
+                // (pushProgress case 6) antes de onFinish(); onFinish() solo no lo hacía.
+                CameraPermissionStep(onContinue: next).tag(6)
             }
             .tabViewStyle(.page(indexDisplayMode: .never))
             .animation(.easeOut, value: step)
