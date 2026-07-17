@@ -41,6 +41,7 @@ struct DayDetailView: View {
                     MealRow(
                         title: meal.title,
                         subtitle: "\(meal.ingredients) · \(meal.timestamp.formatted(date: .omitted, time: .shortened))",
+                        subtitleLineLimit: nil,
                         icon: meal.icon,
                         photo: PhotoStore.load(meal.photoFilename),
                         kcal: Int(meal.totals.kcal)

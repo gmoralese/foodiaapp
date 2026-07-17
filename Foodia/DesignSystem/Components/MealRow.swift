@@ -5,6 +5,9 @@ import SwiftUI
 struct MealRow: View {
     let title: String
     let subtitle: String
+    /// 1 = compacto (dashboard); nil = sin límite (detalle del día muestra
+    /// los ingredientes completos, sin truncar).
+    var subtitleLineLimit: Int? = 1
     let icon: String
     var photo: UIImage?
     let kcal: Int
@@ -30,7 +33,8 @@ struct MealRow: View {
                 Text(subtitle)
                     .font(.caption)
                     .foregroundStyle(Color.dsTextSecondary)
-                    .lineLimit(1)
+                    .lineLimit(subtitleLineLimit)
+                    .fixedSize(horizontal: false, vertical: true)
             }
             Spacer()
             VStack(alignment: .trailing, spacing: 1) {
