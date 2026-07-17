@@ -128,12 +128,6 @@ private struct SplashView: View {
                     .foregroundStyle(.white.opacity(0.85))
             }
         }
-        .overlay(alignment: .bottom) {
-            Label("Puede funcionar 100 % en tu iPhone", systemImage: "lock.fill")
-                .font(.footnote.weight(.medium))
-                .foregroundStyle(.white.opacity(0.85))
-                .padding(.bottom, 40)
-        }
     }
 }
 
