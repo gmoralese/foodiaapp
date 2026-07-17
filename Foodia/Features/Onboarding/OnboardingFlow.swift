@@ -83,6 +83,8 @@ extension RemoteProfile {
         if let activity, let value = ActivityLevel(rawValue: activity) { profile.activity = value }
         profile.sports = sports
         if let objective, let value = GoalObjective(rawValue: objective) { profile.objective = value }
+        profile.name = name
+        profile.avatarPath = avatarPath
         return profile
     }
 
@@ -99,6 +101,10 @@ extension RemoteProfile {
         if let planName { GoalsStore.shared.planName = planName }
         if let foodCountry {
             UserDefaults.standard.set(foodCountry, forKey: FoodLocale.countryKey)
+        }
+        // Avatar: si hay uno en el servidor y no está cacheado, bajarlo.
+        if let avatarPath, AvatarStore.load() == nil {
+            Task { await AvatarStore.fetchAndCache(path: avatarPath) }
         }
     }
 }

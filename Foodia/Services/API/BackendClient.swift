@@ -180,6 +180,8 @@ struct RemoteProfile: Decodable {
     let goalFatG: Double?
     let goalWaterMl: Double?
     let foodCountry: String?
+    let name: String?
+    let avatarPath: String?
 }
 
 /// PATCH parcial: los nil no se envían (el backend no toca esos campos).
@@ -200,6 +202,8 @@ struct ProfilePatch: Encodable {
     var goalFatG: Double? = nil
     var goalWaterMl: Double? = nil
     var foodCountry: String? = nil
+    var name: String? = nil
+    var avatarPath: String? = nil
 }
 
 struct RemoteMealComponent: Decodable {

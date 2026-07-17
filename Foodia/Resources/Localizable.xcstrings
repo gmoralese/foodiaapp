@@ -54,6 +54,9 @@
         }
       }
     },
+    "¿Eliminar esta comida? No se puede deshacer." : {
+
+    },
     "¿Qué comida es?" : {
       "localizations" : {
         "en" : {
@@ -183,6 +186,16 @@
         }
       }
     },
+    "%@ %lld" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ %2$lld"
+          }
+        }
+      }
+    },
     "%@ kg" : {
 
     },
@@ -275,6 +288,9 @@
           }
         }
       }
+    },
+    "%lld g" : {
+
     },
     "%lld g prot · %lld g carbos · %lld g grasas" : {
       "localizations" : {
@@ -774,6 +790,9 @@
           }
         }
       }
+    },
+    "Alimentos" : {
+
     },
     "Almuerzo" : {
       "localizations" : {

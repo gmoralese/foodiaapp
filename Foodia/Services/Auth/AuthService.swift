@@ -96,14 +96,33 @@ final class AuthService {
         return path
     }
 
+    /// Sube el avatar al bucket privado (folder del usuario), reemplazando el
+    /// anterior. Devuelve el path que se persiste en profiles.avatar_path.
+    func uploadAvatar(_ data: Data) async throws -> String {
+        guard let userID else { throw AuthError.invalidCredential }
+        let path = "\(userID.uuidString.lowercased())/avatar.jpg"
+        try await client.storage.from("avatars").upload(
+            path,
+            data: data,
+            options: FileOptions(contentType: "image/jpeg", upsert: true)
+        )
+        return path
+    }
+
+    /// Baja el avatar del bucket (para restaurarlo en un dispositivo nuevo).
+    func downloadAvatar(_ path: String) async throws -> Data {
+        try await client.storage.from("avatars").download(path: path)
+    }
+
     func prepareAppleRequest(_ request: ASAuthorizationAppleIDRequest) {
         var bytes = [UInt8](repeating: 0, count: 32)
         _ = SecRandomCopyBytes(kSecRandomDefault, bytes.count, &bytes)
         let nonce = bytes.map { String(format: "%02x", $0) }.joined()
         currentNonce = nonce
-        // .email: Supabase lo usa como identidad de la cuenta; el usuario
-        // puede ocultarlo con el relay de Apple. Nunca pedimos el nombre.
-        request.requestedScopes = [.email]
+        // .fullName: Apple lo entrega SOLO en la primera autorización (lo
+        // guardamos como nombre del perfil). .email: identidad de la cuenta en
+        // Supabase; el usuario puede ocultarlo con el relay de Apple.
+        request.requestedScopes = [.fullName, .email]
         request.nonce = SHA256.hash(data: Data(nonce.utf8))
             .map { String(format: "%02x", $0) }.joined()
     }
@@ -119,11 +138,24 @@ final class AuthService {
         session = try await client.auth.signInWithIdToken(
             credentials: .init(provider: .apple, idToken: idToken, nonce: nonce)
         )
+        // Apple entrega el nombre SOLO en la primera autorización; si vino, lo
+        // guardamos en el perfil (best-effort — se puede editar luego).
+        if let components = credential.fullName,
+           let name = Self.formatName(components) {
+            _ = try? await BackendClient.shared.updateProfile(ProfilePatch(name: name))
+        }
+    }
+
+    private static func formatName(_ components: PersonNameComponents) -> String? {
+        let name = PersonNameComponentsFormatter().string(from: components)
+            .trimmingCharacters(in: .whitespacesAndNewlines)
+        return name.isEmpty ? nil : String(name.prefix(80))
     }
 
     func signOut() async {
         try? await client.auth.signOut()
         session = nil
+        AvatarStore.clear()
     }
 
     enum AuthError: Error {

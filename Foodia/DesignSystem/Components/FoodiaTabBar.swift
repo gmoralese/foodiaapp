@@ -4,7 +4,7 @@ enum AppTab: Hashable {
     case today
     case history
     case goals
-    case settings
+    case profile
 }
 
 /// Tab bar custom del diseño: 3 destinos + botón de cámara central elevado.
@@ -24,7 +24,7 @@ struct FoodiaTabBar: View {
             Color.clear.frame(width: 76, height: 1)
             HStack(spacing: 0) {
                 tabItem(.goals, title: "Metas", systemImage: "target")
-                tabItem(.settings, title: "Ajustes", systemImage: "gearshape")
+                tabItem(.profile, title: "Perfil", systemImage: "person.crop.circle")
             }
             .frame(maxWidth: .infinity)
         }

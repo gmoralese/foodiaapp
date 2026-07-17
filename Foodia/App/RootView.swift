@@ -16,7 +16,7 @@ struct RootView: View {
             switch arguments[index + 1] {
             case "history": _tab = State(initialValue: .history)
             case "goals": _tab = State(initialValue: .goals)
-            case "settings": _tab = State(initialValue: .settings)
+            case "profile": _tab = State(initialValue: .profile)
             default: break
             }
         }
@@ -53,8 +53,8 @@ struct RootView: View {
                 HistoryView(onCapture: { showCamera = true })
             case .goals:
                 GoalsView()
-            case .settings:
-                SettingsView()
+            case .profile:
+                ProfileView()
             }
         }
         .safeAreaInset(edge: .bottom, spacing: 0) {

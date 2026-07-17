@@ -90,4 +90,6 @@ nonisolated struct UserProfile: Codable, Equatable {
     var activity: ActivityLevel = .moderate
     var sports: [String] = []
     var objective: GoalObjective = .deficit
+    var name: String? = nil
+    var avatarPath: String? = nil
 }

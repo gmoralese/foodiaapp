@@ -1,8 +1,10 @@
 import SwiftData
 import SwiftUI
 
-/// Ajustes: motor de análisis, modelo local, metas, Salud, datos y privacidad.
-struct SettingsView: View {
+/// Perfil: card del usuario (avatar + nombre) con sus ajustes principales
+/// (metas, peso/medidas, país), seguido de los ajustes de la app (motor,
+/// modelo, salud, recordatorios, datos).
+struct ProfileView: View {
     @AppStorage(EnginePreference.storageKey) private var engineRaw = EnginePreference.auto.rawValue
     @Environment(\.modelContext) private var modelContext
 
@@ -12,6 +14,8 @@ struct SettingsView: View {
     @State private var vlmManager = VLMModelManager.shared
     @State private var showMetasSheet = false
     @State private var showBodyMeasurements = false
+    @State private var showEditProfile = false
+    @State private var avatarImage: UIImage?
     @State private var confirmDeleteModel = false
     @State private var promptDownloadForLocal = false
     @State private var confirmWipe = false
@@ -20,19 +24,19 @@ struct SettingsView: View {
     @State private var exportURL: URL?
     @State private var confirmSignOut = false
 
+    @AppStorage(FoodLocale.countryKey) private var country = FoodLocale.country
+
     private var goals: DailyGoals { GoalsStore.shared.goals }
 
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 22) {
-                Text("Ajustes")
+                Text("Perfil")
                     .font(.dsScreenTitle)
                     .foregroundStyle(Color.dsTextPrimary)
+                profileSection
                 engineSection
                 modelCard
-                metasSection
-                bodyMeasurementsSection
-                regionSection
                 healthSection
                 remindersSection
                 dataSection
@@ -42,14 +46,108 @@ struct SettingsView: View {
             .padding(.bottom, 24)
         }
         .background(Color.dsBackground)
+        .task { avatarImage = AvatarStore.load() }
         .sheet(isPresented: $showMetasSheet) {
             MetasSheet()
         }
         .sheet(isPresented: $showBodyMeasurements) {
             BodyMeasurementsSheet()
         }
+        .sheet(isPresented: $showEditProfile, onDismiss: { avatarImage = AvatarStore.load() }) {
+            EditProfileSheet()
+        }
         .sheet(item: $exportURL) { url in
             ExportSheet(url: url)
+        }
+    }
+
+    // MARK: Perfil del usuario
+
+    private var displayName: String {
+        if let name = GoalsStore.shared.profile?.name,
+           !name.trimmingCharacters(in: .whitespaces).isEmpty {
+            return name
+        }
+        return "Completa tu perfil"
+    }
+
+    private var profileSection: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            sectionLabel("PERFIL")
+            VStack(spacing: 1) {
+                profileHeaderRow
+                navRow(title: "Metas diarias", value: "\(Int(goals.kcal)) kcal") {
+                    showMetasSheet = true
+                }
+                navRow(title: "Peso y medidas", value: profileWeightHint) {
+                    showBodyMeasurements = true
+                }
+                countryRow
+            }
+            .background(Color.dsCard, in: .rect(cornerRadius: DSRadius.card, style: .continuous))
+        }
+    }
+
+    private var profileHeaderRow: some View {
+        Button {
+            showEditProfile = true
+        } label: {
+            HStack(spacing: 12) {
+                AvatarView(image: avatarImage, name: GoalsStore.shared.profile?.name, size: 52)
+                VStack(alignment: .leading, spacing: 2) {
+                    Text(displayName)
+                        .font(.dsRowTitle)
+                        .foregroundStyle(Color.dsTextPrimary)
+                    if let email = AuthService.shared.session?.user.email {
+                        Text(email)
+                            .font(.caption)
+                            .foregroundStyle(Color.dsTextSecondary)
+                            .lineLimit(1)
+                    } else {
+                        Text("Editar nombre y foto")
+                            .font(.caption)
+                            .foregroundStyle(Color.dsTextSecondary)
+                    }
+                }
+                Spacer()
+                Image(systemName: "chevron.right")
+                    .font(.caption.weight(.semibold))
+                    .foregroundStyle(Color.dsBorderStrong)
+            }
+            .padding(13)
+            .contentShape(.rect)
+        }
+        .buttonStyle(.plain)
+    }
+
+    private var profileWeightHint: String? {
+        guard let weight = GoalsStore.shared.profile?.weightKg else { return nil }
+        return "\(measurementText(weight)) kg"
+    }
+
+    private var countryRow: some View {
+        Menu {
+            ForEach(FoodLocale.countries, id: \.self) { code in
+                Button(FoodLocale.countryName(for: code)) {
+                    country = code
+                    SyncService.shared.pushProfileSnapshot()
+                }
+            }
+        } label: {
+            HStack(spacing: 8) {
+                Text("País")
+                    .font(.dsRowTitle)
+                    .foregroundStyle(Color.dsTextPrimary)
+                Spacer()
+                Text(FoodLocale.countryName(for: country))
+                    .font(.caption.weight(.bold))
+                    .foregroundStyle(Color.dsGreenText)
+                Image(systemName: "chevron.up.chevron.down")
+                    .font(.caption2.weight(.semibold))
+                    .foregroundStyle(Color.dsBorderStrong)
+            }
+            .padding(13)
+            .contentShape(.rect)
         }
     }
 
@@ -218,80 +316,6 @@ struct SettingsView: View {
             Text("Se cortó la descarga (\(message)). Lo descargado no se pierde: retomamos desde donde quedó.")
                 .font(.caption2)
                 .foregroundStyle(Color.dsTextSecondary)
-        }
-    }
-
-    // MARK: Metas
-
-    private var metasSection: some View {
-        VStack(alignment: .leading, spacing: 8) {
-            sectionLabel("METAS DIARIAS")
-            VStack(spacing: 1) {
-                navRow(title: "Plan", value: GoalsStore.shared.planName) {
-                    showMetasSheet = true
-                }
-                navRow(
-                    title: "Metas",
-                    value: "\(Int(goals.kcal)) kcal · \(Int(goals.protein))/\(Int(goals.carbs))/\(Int(goals.fat)) g"
-                ) {
-                    showMetasSheet = true
-                }
-            }
-            .background(Color.dsCard, in: .rect(cornerRadius: DSRadius.card, style: .continuous))
-        }
-    }
-
-    // MARK: Peso y medidas
-
-    private var profileWeightHint: String? {
-        guard let weight = GoalsStore.shared.profile?.weightKg else { return nil }
-        return "\(measurementText(weight)) kg"
-    }
-
-    private var bodyMeasurementsSection: some View {
-        VStack(alignment: .leading, spacing: 8) {
-            sectionLabel("PESO Y MEDIDAS")
-            navRow(title: "Peso y medidas", value: profileWeightHint) {
-                showBodyMeasurements = true
-            }
-            .background(Color.dsCard, in: .rect(cornerRadius: DSRadius.card, style: .continuous))
-        }
-    }
-
-    // MARK: Región
-
-    @AppStorage(FoodLocale.countryKey) private var country = FoodLocale.country
-
-    private var regionSection: some View {
-        VStack(alignment: .leading, spacing: 8) {
-            sectionLabel("REGIÓN")
-            Menu {
-                ForEach(FoodLocale.countries, id: \.self) { code in
-                    Button(FoodLocale.countryName(for: code)) {
-                        country = code
-                        SyncService.shared.pushProfileSnapshot()
-                    }
-                }
-            } label: {
-                HStack(spacing: 12) {
-                    DSIcon(id: "earth", size: 20, tint: .dsTextSecondary)
-                    VStack(alignment: .leading, spacing: 2) {
-                        Text("País")
-                            .font(.dsRowTitle)
-                            .foregroundStyle(Color.dsTextPrimary)
-                        Text("La IA usa los nombres de comida de tu región")
-                            .font(.caption)
-                            .foregroundStyle(Color.dsTextSecondary)
-                    }
-                    Spacer()
-                    Text(FoodLocale.countryName(for: country))
-                        .font(.caption.weight(.bold))
-                        .foregroundStyle(Color.dsGreenText)
-                }
-                .padding(13)
-                .contentShape(.rect)
-            }
-            .background(Color.dsCard, in: .rect(cornerRadius: DSRadius.card, style: .continuous))
         }
     }
 
@@ -491,6 +515,7 @@ struct SettingsView: View {
         SyncService.shared.wipeRemote()
         try? modelContext.delete(model: MealEntry.self)
         try? modelContext.delete(model: WaterEntry.self)
+        try? modelContext.delete(model: BodyMeasurement.self)
         try? FileManager.default.removeItem(at: PhotoStore.directory)
         GoalsStore.shared.applyCustom(goals: .fallback)
         GoalsStore.shared.planName = "Sugerido"

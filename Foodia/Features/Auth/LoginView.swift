@@ -26,7 +26,7 @@ struct LoginView: View {
                 .multilineTextAlignment(.center)
             Spacer()
             signInButton
-            Text("Apple nunca nos comparte tu nombre, y puedes\nocultar tu correo real con «Ocultar mi correo».")
+            Text("Apple solo comparte lo que autorices. Puedes ocultar tu\ncorreo real y editar tu nombre cuando quieras.")
                 .font(.caption)
                 .foregroundStyle(Color.dsTextTertiary)
                 .multilineTextAlignment(.center)

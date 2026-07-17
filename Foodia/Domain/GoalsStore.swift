@@ -70,6 +70,22 @@ final class GoalsStore {
         return true
     }
 
+    /// Actualiza el nombre del perfil y sincroniza.
+    func updateName(_ name: String?) {
+        guard var profile else { return }
+        profile.name = name
+        self.profile = profile
+        didChange?()
+    }
+
+    /// Actualiza el path del avatar (tras subirlo) y sincroniza.
+    func updateAvatarPath(_ path: String?) {
+        guard var profile else { return }
+        profile.avatarPath = path
+        self.profile = profile
+        didChange?()
+    }
+
     private func persist(_ value: (some Encodable)?, key: String) {
         guard let value, let data = try? JSONEncoder().encode(value) else {
             UserDefaults.standard.removeObject(forKey: key)

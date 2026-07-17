@@ -74,6 +74,8 @@ final class SyncService {
                 patch.activity = profile.activity.rawValue
                 patch.sports = profile.sports
                 patch.objective = profile.objective.rawValue
+                patch.name = profile.name
+                patch.avatarPath = profile.avatarPath
             }
             try? await BackendClient.shared.updateProfile(patch)
         }
