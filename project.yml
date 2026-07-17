@@ -57,7 +57,9 @@ targets:
         product: LucideIcons
       - package: supabase-swift
         product: Supabase
-    scheme: {}
+    scheme:
+      testTargets:
+        - FoodiaTests
     info:
       path: Foodia/Support/Info.plist
       properties:
@@ -111,4 +113,19 @@ targets:
         SKIP_INSTALL: "YES"
         # WidgetKit usa protocolos nonisolated; sin MainActor por defecto acá.
         SWIFT_DEFAULT_ACTOR_ISOLATION: nonisolated
+        SWIFT_EMIT_LOC_STRINGS: "NO"
+  FoodiaTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: FoodiaTests
+    dependencies:
+      - target: Foodia
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: "YES"
+        # Host de la app para poder usar @testable import Foodia.
+        TEST_HOST: "$(BUILT_PRODUCTS_DIR)/Foodia.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Foodia"
+        BUNDLE_LOADER: "$(TEST_HOST)"
+        TARGETED_DEVICE_FAMILY: "1"
         SWIFT_EMIT_LOC_STRINGS: "NO"
