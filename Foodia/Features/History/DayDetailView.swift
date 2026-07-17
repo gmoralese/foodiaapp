@@ -38,14 +38,19 @@ struct DayDetailView: View {
                     .font(.dsSection)
                     .foregroundStyle(Color.dsTextPrimary)
                 ForEach(meals) { meal in
-                    MealRow(
-                        title: meal.title,
-                        subtitle: "\(meal.ingredients) · \(meal.timestamp.formatted(date: .omitted, time: .shortened))",
-                        subtitleLineLimit: nil,
-                        icon: meal.icon,
-                        photo: PhotoStore.load(meal.photoFilename),
-                        kcal: Int(meal.totals.kcal)
-                    )
+                    NavigationLink {
+                        MealDetailView(meal: meal)
+                    } label: {
+                        MealRow(
+                            title: meal.title,
+                            subtitle: "\(meal.ingredients) · \(meal.timestamp.formatted(date: .omitted, time: .shortened))",
+                            subtitleLineLimit: nil,
+                            icon: meal.icon,
+                            photo: PhotoStore.load(meal.photoFilename),
+                            kcal: Int(meal.totals.kcal)
+                        )
+                    }
+                    .buttonStyle(.plain)
                     .contextMenu {
                         Button("Eliminar", systemImage: "trash", role: .destructive) {
                             SyncService.shared.deleteRemoteMeal(meal.entries.first?.remoteMealID)

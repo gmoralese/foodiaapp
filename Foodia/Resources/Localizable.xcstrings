@@ -1,2935 +1,3017 @@
 {
-  "sourceLanguage": "es",
-  "strings": {
-    "": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": ""
+  "sourceLanguage" : "es",
+  "strings" : {
+    "" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
           }
         }
       }
     },
-    "\"%@\"": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "\"%@\""
+    "—" : {
+
+    },
+    "¿Cuál es tu objetivo?" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's your goal?"
           }
         }
       }
     },
-    "%@ · %lld comida%@": {
-      "extractionState": "stale",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%1$@ · %2$lld meal%3$@"
-          }
-        },
-        "es": {
-          "stringUnit": {
-            "state": "new",
-            "value": "%1$@ · %2$lld comida%3$@"
+    "¿Cuánto te mueves?" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "How active are you?"
           }
         }
       }
     },
-    "%@: %lld calorías%@": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%1$@: %2$lld calories%3$@"
-          }
-        },
-        "es": {
-          "stringUnit": {
-            "state": "new",
-            "value": "%1$@: %2$lld calorías%3$@"
+    "¿Descartar este análisis?" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Discard this analysis?"
           }
         }
       }
     },
-    "%@: %lld de %lld gramos": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%1$@: %2$lld of %3$lld grams"
-          }
-        },
-        "es": {
-          "stringUnit": {
-            "state": "new",
-            "value": "%1$@: %2$lld de %3$lld gramos"
+    "¿Eliminar el modelo local (%@)? Vas a necesitar internet para analizar comidas hasta que lo vuelvas a descargar." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delete the local model (%@)? You'll need internet to analyze meals until you download it again."
           }
         }
       }
     },
-    "%lld": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%lld"
+    "¿Qué comida es?" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Which meal is this?"
           }
         }
       }
     },
-    "%lld %@": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%1$lld %2$@"
-          }
-        },
-        "es": {
-          "stringUnit": {
-            "state": "new",
-            "value": "%1$lld %2$@"
+    "¿Qué haces? (puedes elegir varios)" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What do you do? (you can pick several)"
           }
         }
       }
     },
-    "%lld / %lld g": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%1$lld / %2$lld g"
-          }
-        },
-        "es": {
-          "stringUnit": {
-            "state": "new",
-            "value": "%1$lld / %2$lld g"
+    "¿Seguro? No hay vuelta atrás." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Are you sure? There's no going back."
           }
         }
       }
     },
-    "%lld / %lld ml": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%1$lld / %2$lld ml"
+    "¿Ya registraste tu comida?" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Logged your meal yet?"
+          }
+        }
+      }
+    },
+    "…" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "…"
+          }
+        }
+      }
+    },
+    "· %lld comida%@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "· %1$lld meal%2$@"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "new",
-            "value": "%1$lld / %2$lld ml"
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "· %1$lld comida%2$@"
           }
         }
       }
     },
-    "%lld g prot · %lld g carbos · %lld g grasas": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%1$lld g protein · %2$lld g carbs · %3$lld g fat"
-          }
-        },
-        "es": {
-          "stringUnit": {
-            "state": "new",
-            "value": "%1$lld g prot · %2$lld g carbos · %3$lld g grasas"
+    "\"%@\"" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "\"%@\""
           }
         }
       }
     },
-    "%lld gramos": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%lld grams"
+    "**Reanalizando con tu contexto:** \"%@\"" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "**Reanalyzing with your context:** \"%@\""
           }
         }
       }
     },
-    "%lld kcal": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%lld kcal"
-          }
-        }
-      }
-    },
-    "%lld kcal / 100 g": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%lld kcal / 100 g"
-          }
-        }
-      }
-    },
-    "**Reanalizando con tu contexto:** \"%@\"": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "**Reanalyzing with your context:** \"%@\""
-          }
-        }
-      }
-    },
-    "**Sugerido por tu plan** (%@): %lld kcal · %lld / %lld / %lld g. Si cambias los números, el plan pasa a \"Personalizado\".": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "**Suggested by your plan** (%1$@): %2$lld kcal · %3$lld / %4$lld / %5$lld g. If you change the numbers, the plan switches to \"Custom\"."
+    "**Sugerido por tu plan** (%@): %lld kcal · %lld / %lld / %lld g. Si cambias los números, el plan pasa a \"Personalizado\"." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "**Suggested by your plan** (%1$@): %2$lld kcal · %3$lld / %4$lld / %5$lld g. If you change the numbers, the plan switches to \"Custom\"."
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "new",
-            "value": "**Sugerido por tu plan** (%1$@): %2$lld kcal · %3$lld / %4$lld / %5$lld g. Si cambias los números, el plan pasa a \"Personalizado\"."
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "**Sugerido por tu plan** (%1$@): %2$lld kcal · %3$lld / %4$lld / %5$lld g. Si cambias los números, el plan pasa a \"Personalizado\"."
           }
         }
       }
     },
-    "**Tip:** también puedes elegir una foto de la galería, o dictarle a la IA qué comiste si no tienes foto.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "**Tip:** you can also choose a photo from your gallery, or dictate to the AI what you ate if you don't have a photo."
+    "**Tip:** también puedes elegir una foto de la galería, o dictarle a la IA qué comiste si no tienes foto." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "**Tip:** you can also choose a photo from your gallery, or dictate to the AI what you ate if you don't have a photo."
           }
         }
       }
     },
-    "+%lld kcal": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "+%lld kcal"
-          }
-        }
-      }
-    },
-    "+0,2 kg por semana": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "+0.2 kg per week"
-          }
-        }
-      }
-    },
-    "+0,4 kg por semana": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "+0.4 kg per week"
-          }
-        }
-      }
-    },
-    "100 % privado · funciona sin conexión": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "100% private · works offline"
-          }
-        }
-      }
-    },
-    "1–2 veces por semana": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "1–2 times a week"
-          }
-        }
-      }
-    },
-    "3–5 veces por semana": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "3–5 times a week"
-          }
-        }
-      }
-    },
-    "6 o más veces por semana": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "6 or more times a week"
-          }
-        }
-      }
-    },
-    "640 kcal · P 24 g · C 68 g · G 29 g": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "640 kcal · P 24 g · C 68 g · F 29 g"
-          }
-        }
-      }
-    },
-    "A las 20:30, si aún no registraste tu comida": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "At 8:30 PM, if you haven't logged a meal yet"
-          }
-        }
-      }
-    },
-    "Abrir Ajustes": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Open Settings"
-          }
-        }
-      }
-    },
-    "Activa el permiso en Salud → Compartir → Foodia.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Enable the permission in Health → Sharing → Foodia."
-          }
-        }
-      }
-    },
-    "Activa las notificaciones en Ajustes → Foodia → Notificaciones.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Enable notifications in Settings → Foodia → Notifications."
-          }
-        }
-      }
-    },
-    "Agregar componente": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Add component"
-          }
-        }
-      }
-    },
-    "Agua": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Water"
-          }
-        }
-      }
-    },
-    "Ahora no": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Not now"
-          }
-        }
-      }
-    },
-    "Ajustes": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Settings"
-          }
-        }
-      }
-    },
-    "Al terminar, toca Reanalizar para que la IA use tu contexto.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "When you're done, tap Reanalyze so the AI uses your context."
-          }
-        }
-      }
-    },
-    "Algo de ejercicio, caminatas": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Some exercise, walking"
-          }
-        }
-      }
-    },
-    "Almuerzo": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Lunch"
-          }
-        }
-      }
-    },
-    "Altura": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Height"
-          }
-        }
-      }
-    },
-    "Analizar": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Analyze"
-          }
-        }
-      }
-    },
-    "Analizar con Local": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Analyze with Local"
-          }
-        }
-      }
-    },
-    "Apple Vision (clasificador)": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Apple Vision (classifier)"
-          }
-        }
-      }
-    },
-    "Apple nunca nos comparte tu nombre, y puedes\nocultar tu correo real con «Ocultar mi correo».": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Apple never shares your name with us, and you can\nhide your real email with \"Hide My Email\"."
-          }
-        }
-      }
-    },
-    "Auto · usó Local": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Auto · used Local"
-          }
-        }
-      }
-    },
-    "Automático": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Automatic"
-          }
-        }
-      }
-    },
-    "Ayer, %@": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Yesterday, %@"
-          }
-        }
-      }
-    },
-    "Bajar grasa manteniendo el músculo": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Lose fat while keeping muscle"
-          }
-        }
-      }
-    },
-    "Buscar alimento": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Search foods"
-          }
-        }
-      }
-    },
-    "Calculando macros": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Calculating macros"
-          }
-        }
-      }
-    },
-    "Calorías": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Calories"
-          }
-        }
-      }
-    },
-    "Calorías: %lld de %lld%@": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Calories: %1$lld of %2$lld%3$@"
+    "%@ · %lld comida%@" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ · %2$lld meal%3$@"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "new",
-            "value": "Calorías: %1$lld de %2$lld%3$@"
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ · %2$lld comida%3$@"
           }
         }
       }
     },
-    "Cancelar": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Cancel"
-          }
-        }
-      }
+    "%@ kg" : {
+
     },
-    "Carbohidratos": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Carbs"
-          }
-        }
-      }
-    },
-    "Carbos": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Carbs"
-          }
-        }
-      }
-    },
-    "Carga los números de tu profesional": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Enter the numbers from your professional"
-          }
-        }
-      }
-    },
-    "Cargando el modelo local…": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Loading the local model…"
-          }
-        }
-      }
-    },
-    "Cargando en memoria…": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Loading into memory…"
-          }
-        }
-      }
-    },
-    "Cargar la comida a mano": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Log the meal manually"
-          }
-        }
-      }
-    },
-    "Casi nada": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Almost none"
-          }
-        }
-      }
-    },
-    "Cena": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Dinner"
-          }
-        }
-      }
-    },
-    "Cerrar": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Close"
-          }
-        }
-      }
-    },
-    "Cerrar sesión": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Sign out"
-          }
-        }
-      }
-    },
-    "Ciclismo": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Cycling"
-          }
-        }
-      }
-    },
-    "Comida guardada": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Meal saved"
-          }
-        }
-      }
-    },
-    "Comidas": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Meals"
-          }
-        }
-      }
-    },
-    "Comidas de hoy": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Today's meals"
-          }
-        }
-      }
-    },
-    "Compartir foodia-export.json": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Share foodia-export.json"
-          }
-        }
-      }
-    },
-    "Con Local, tus fotos nunca salen de tu iPhone.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "With Local, your photos never leave your iPhone."
-          }
-        }
-      }
-    },
-    "Con esto calculamos tu gasto diario y tus metas. Queda solo en tu iPhone.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "We use this to calculate your daily burn and your goals. It stays on your iPhone."
-          }
-        }
-      }
-    },
-    "Con tu cuenta, el diario y tus metas quedan respaldados y se sincronizan entre tus dispositivos.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "With your account, your diary and goals are backed up and synced across your devices."
-          }
-        }
-      }
-    },
-    "Con tu país, la IA usa los nombres de comida de tu región (palta, aguacate…).": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "With your country, the AI uses your region's food names (eggplant, aubergine…)."
-          }
-        }
-      }
-    },
-    "Continuar": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Continue"
-          }
-        }
-      }
-    },
-    "Continuar…": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Continue…"
-          }
-        }
-      }
-    },
-    "Cuando registres tu primera comida, aquí verás tus días y tu tendencia semanal.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Once you log your first meal, you'll see your days and weekly trend here."
-          }
-        }
-      }
-    },
-    "Cuéntanos de ti": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tell us about yourself"
-          }
-        }
-      }
-    },
-    "Cuéntanos qué comiste — con cantidades si las sabes — y la IA estima los macros.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tell us what you ate — with amounts if you know them — and the AI estimates the macros."
-          }
-        }
-      }
-    },
-    "DATOS Y PRIVACIDAD": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "DATA & PRIVACY"
-          }
-        }
-      }
-    },
-    "Define cuántas calorías te sugerimos por día.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Sets how many calories we suggest per day."
-          }
-        }
-      }
-    },
-    "Desayuno": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Breakfast"
-          }
-        }
-      }
-    },
-    "Descargando… %lld %%": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Downloading… %lld%%"
-          }
-        }
-      }
-    },
-    "Descargar": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Download"
-          }
-        }
-      }
-    },
-    "Descargar ahora": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Download now"
-          }
-        }
-      }
-    },
-    "Descartar": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Discard"
-          }
-        }
-      }
-    },
-    "Describe tu comida": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Describe your meal"
-          }
-        }
-      }
-    },
-    "Detectamos %lld componente%@ · ajusta los gramos": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "We detected %1$lld component%2$@ · adjust the grams"
+    "%@: %lld calorías%@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@: %2$lld calories%3$@"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "new",
-            "value": "Detectamos %1$lld componente%2$@ · ajusta los gramos"
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@: %2$lld calorías%3$@"
           }
         }
       }
     },
-    "Detectando alimentos": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Detecting food"
-          }
-        }
-      }
-    },
-    "Detectando alimentos…": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Detecting food…"
-          }
-        }
-      }
-    },
-    "Detener dictado": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Stop dictation"
-          }
-        }
-      }
-    },
-    "Dictar comida": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Dictate meal"
-          }
-        }
-      }
-    },
-    "Dictar contexto": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Dictate context"
-          }
-        }
-      }
-    },
-    "Disponible cuando termine la descarga": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Available when the download finishes"
-          }
-        }
-      }
-    },
-    "Déficit calórico": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Calorie deficit"
-          }
-        }
-      }
-    },
-    "Déficit intenso": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Intense deficit"
-          }
-        }
-      }
-    },
-    "Déficit moderado": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Moderate deficit"
-          }
-        }
-      }
-    },
-    "Déficit suave": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Light deficit"
-          }
-        }
-      }
-    },
-    "Día": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Day"
-          }
-        }
-      }
-    },
-    "Días": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Days"
-          }
-        }
-      }
-    },
-    "Edad": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Age"
-          }
-        }
-      }
-    },
-    "Ej.: 2 huevos revueltos con una arepa y jugo de naranja": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "E.g.: 2 scrambled eggs with toast and orange juice"
-          }
-        }
-      }
-    },
-    "El backend no está configurado en este build.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "The backend isn't configured in this build."
-          }
-        }
-      }
-    },
-    "El modelo local falló en esta foto; usé Apple Vision.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "The local model failed on this photo; I used Apple Vision."
-          }
-        }
-      }
-    },
-    "El modelo no detectó comida; prueba con Vision o agrega componentes a mano.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "The model didn't detect any food; try Vision or add components by hand."
-          }
-        }
-      }
-    },
-    "El modelo no devolvió una respuesta interpretable.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "The model didn't return an interpretable response."
-          }
-        }
-      }
-    },
-    "El motor Nube necesita internet y no pudimos llegar. Tu foto está a salvo: puedes reintentar o analizarla aquí mismo con el motor Local.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "The Cloud engine needs internet and we couldn't reach it. Your photo is safe: you can retry or analyze it right here with the Local engine."
-          }
-        }
-      }
-    },
-    "El reconocimiento de voz no está disponible.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Speech recognition isn't available."
-          }
-        }
-      }
-    },
-    "Elegir alimento": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Choose food"
-          }
-        }
-      }
-    },
-    "Elegir de la galería": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Choose from gallery"
-          }
-        }
-      }
-    },
-    "Eliminar": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Delete"
-          }
-        }
-      }
-    },
-    "Eliminar todo": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Delete all"
-          }
-        }
-      }
-    },
-    "Eliminar todos mis datos…": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Delete all my data…"
-          }
-        }
-      }
-    },
-    "Eliminar…": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Delete…"
-          }
-        }
-      }
-    },
-    "En meta": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "On target"
-          }
-        }
-      }
-    },
-    "Encuadra el plato completo, con buena luz": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Frame the whole plate, in good light"
-          }
-        }
-      }
-    },
-    "Entrenamiento intenso casi diario": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Intense training almost every day"
-          }
-        }
-      }
-    },
-    "Entrenas varias veces por semana": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "You train several times a week"
-          }
-        }
-      }
-    },
-    "Escribe kcal y macros en Apple Salud": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Writes kcal and macros to Apple Health"
-          }
-        }
-      }
-    },
-    "Escuchando…": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Listening…"
-          }
-        }
-      }
-    },
-    "Esta semana": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "This week"
-          }
-        }
-      }
-    },
-    "Este equipo no tiene cámara disponible. Puedes elegir una foto de la galería.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "This device doesn't have a camera. You can choose a photo from the gallery."
-          }
-        }
-      }
-    },
-    "Excedido": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Over"
-          }
-        }
-      }
-    },
-    "Exportar mis datos": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Export my data"
-          }
-        }
-      }
-    },
-    "Foodia": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Foodia"
-          }
-        }
-      }
-    },
-    "Foodia detecta qué hay y estima calorías, proteínas, carbos y grasas en segundos. Tú solo ajustas los gramos.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Foodia detects what's there and estimates calories, protein, carbs, and fat in seconds. You just adjust the grams."
-          }
-        }
-      }
-    },
-    "Foodia necesita la cámara para ver tu plato. Con el motor Local, las fotos no salen de tu teléfono.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Foodia needs the camera to see your plate. With the Local engine, photos never leave your phone."
-          }
-        }
-      }
-    },
-    "Foodia no puede ver tu plato": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Foodia can't see your plate"
-          }
-        }
-      }
-    },
-    "Foodia no vende datos ni guarda tus fotos en servidores. Las fotos analizadas con Nube se descartan al terminar.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Foodia doesn't sell your data or store your photos on servers. Photos analyzed with Cloud are discarded when finished."
-          }
-        }
-      }
-    },
-    "Foodia puede analizar todo en tu iPhone, sin subir nada a internet. Tú eliges el motor:": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Foodia can analyze everything on your iPhone, without uploading anything. You choose the engine:"
-          }
-        }
-      }
-    },
-    "Foto lista": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Photo ready"
-          }
-        }
-      }
-    },
-    "Fuerza": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Strength training"
-          }
-        }
-      }
-    },
-    "Fútbol": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Soccer"
-          }
-        }
-      }
-    },
-    "Ganar músculo con superávit controlado": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Gain muscle with a controlled surplus"
-          }
-        }
-      }
-    },
-    "Generado con Apple Intelligence en tu iPhone": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Generated with Apple Intelligence on your iPhone"
-          }
-        }
-      }
-    },
-    "Girar cámara": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Flip camera"
-          }
-        }
-      }
-    },
-    "Gramos": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Grams"
-          }
-        }
-      }
-    },
-    "Grasas": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Fat"
-          }
-        }
-      }
-    },
-    "Guarda tu progreso": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Save your progress"
-          }
-        }
-      }
-    },
-    "Guardar": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Save"
-          }
-        }
-      }
-    },
-    "Guardar comida": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Save meal"
-          }
-        }
-      }
-    },
-    "Hidratación": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Hydration"
-          }
-        }
-      }
-    },
-    "Hidratación: %lld de %lld mililitros": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Hydration: %1$lld of %2$lld milliliters"
+    "%@: %lld de %lld gramos" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@: %2$lld of %3$lld grams"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "new",
-            "value": "Hidratación: %1$lld de %2$lld mililitros"
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@: %2$lld de %3$lld gramos"
           }
         }
       }
     },
-    "Historial": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "History"
+    "%lld" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld"
           }
         }
       }
     },
-    "Hombre": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Male"
-          }
-        }
-      }
-    },
-    "Hoy": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Today"
-          }
-        }
-      }
-    },
-    "Hoy, %@": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Today, %@"
-          }
-        }
-      }
-    },
-    "Indicación médica": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Medical guidance"
-          }
-        }
-      }
-    },
-    "Instalado · %@ · %@": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Installed · %1$@ · %2$@"
+    "%lld / %lld g" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$lld / %2$lld g"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "new",
-            "value": "Instalado · %1$@ · %2$@"
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$lld / %2$lld g"
           }
         }
       }
     },
-    "La IA usa los nombres de comida de tu región": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "The AI uses your region's food names"
-          }
-        }
-      }
-    },
-    "La descarga se interrumpió": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Download interrupted"
-          }
-        }
-      }
-    },
-    "La foto y tus ajustes se pierden.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "The photo and your adjustments will be lost."
-          }
-        }
-      }
-    },
-    "La imagen no se pudo procesar.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "The image couldn't be processed."
-          }
-        }
-      }
-    },
-    "Le negaste el acceso a la cámara (todo bien). Para sacar fotos, actívalo en Ajustes → Foodia → Cámara.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "You denied camera access (that's okay). To take photos, turn it on in Settings → Foodia → Camera."
-          }
-        }
-      }
-    },
-    "Listo": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Done"
-          }
-        }
-      }
-    },
-    "Lo único que falta:\nla cámara": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "The only thing missing:\nthe camera"
-          }
-        }
-      }
-    },
-    "Local": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Local"
-          }
-        }
-      }
-    },
-    "METAS DIARIAS": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "DAILY GOALS"
-          }
-        }
-      }
-    },
-    "MOTOR DE ANÁLISIS": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "ANALYSIS ENGINE"
-          }
-        }
-      }
-    },
-    "Mantenimiento": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Maintenance"
-          }
-        }
-      }
-    },
-    "Merienda o colación": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Snack"
-          }
-        }
-      }
-    },
-    "Meta": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Goal"
-          }
-        }
-      }
-    },
-    "Metas": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Goals"
-          }
-        }
-      }
-    },
-    "Metas diarias": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Daily goals"
-          }
-        }
-      }
-    },
-    "Modelo Foodia Vision": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Foodia Vision model"
-          }
-        }
-      }
-    },
-    "Modelo local (%@)": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Local model (%@)"
-          }
-        }
-      }
-    },
-    "Motor Local · sin salir de tu iPhone": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Local engine · never leaves your iPhone"
-          }
-        }
-      }
-    },
-    "Motor Nube · máxima precisión": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Cloud engine · maximum accuracy"
-          }
-        }
-      }
-    },
-    "Mujer": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Female"
-          }
-        }
-      }
-    },
-    "Más tarde": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Later"
-          }
-        }
-      }
-    },
-    "Máxima precisión · requiere internet": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Maximum accuracy · requires internet"
-          }
-        }
-      }
-    },
-    "Natación": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Swimming"
-          }
-        }
-      }
-    },
-    "No descargado · %@": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Not downloaded · %@"
-          }
-        }
-      }
-    },
-    "No encontramos comida en la foto": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "We couldn't find food in the photo"
-          }
-        }
-      }
-    },
-    "No pudimos iniciar sesión": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "We couldn't sign you in"
-          }
-        }
-      }
-    },
-    "No se pudo cargar el modelo local; usé Apple Vision.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "The local model couldn't be loaded; I used Apple Vision."
-          }
-        }
-      }
-    },
-    "Nube": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Cloud"
-          }
-        }
-      }
-    },
-    "Nube (Gemini Flash)": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Cloud (Gemini Flash)"
-          }
-        }
-      }
-    },
-    "Nube con conexión; si no hay, Local": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Cloud when online; otherwise Local"
-          }
-        }
-      }
-    },
-    "O descríbela sin foto": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Or describe it without a photo"
-          }
-        }
-      }
-    },
-    "Omitir": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Skip"
-          }
-        }
-      }
-    },
-    "Otro": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Other"
-          }
-        }
-      }
-    },
-    "Para dictar, permite el micrófono en Ajustes → Foodia.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "To dictate, allow microphone access in Settings → Foodia."
-          }
-        }
-      }
-    },
-    "Para registrar sin foto se necesita conexión o el modelo local descargado.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Logging without a photo needs a connection or the downloaded local model."
-          }
-        }
-      }
-    },
-    "Para usar el motor Local, primero descarga el modelo (1 GB, se hace una sola vez).": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "To use the Local engine, first download the model (1 GB, one time only)."
-          }
-        }
-      }
-    },
-    "País": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Country"
-          }
-        }
-      }
-    },
-    "Permitir cámara": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Allow camera"
-          }
-        }
-      }
-    },
-    "Peso": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Weight"
-          }
-        }
-      }
-    },
-    "Plan": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Plan"
-          }
-        }
-      }
-    },
-    "Plan personalizado": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Custom plan"
-          }
-        }
-      }
-    },
-    "Prefiero no decir": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Prefer not to say"
-          }
-        }
-      }
-    },
-    "Preparando el motor…": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Preparing the engine…"
-          }
-        }
-      }
-    },
-    "Proteínas": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Protein"
-          }
-        }
-      }
-    },
-    "Puede funcionar 100 % en tu iPhone": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Can run 100% on your iPhone"
-          }
-        }
-      }
-    },
-    "Puede ser la luz, el ángulo, o un plato muy tapado. Cuéntanos qué es y lo intentamos de nuevo.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "It could be the lighting, the angle, or a mostly hidden dish. Tell us what it is and we'll try again."
-          }
-        }
-      }
-    },
-    "Puedes cambiar de etapa cuando quieras; tus metas se recalculan.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "You can switch phases anytime; your goals recalculate."
-          }
-        }
-      }
-    },
-    "Puedes cambiarlo cuando quieras en Ajustes.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "You can change it anytime in Settings."
-          }
-        }
-      }
-    },
-    "Puedes seguir usando la app; te avisamos cuando esté listo.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "You can keep using the app; we'll let you know when it's ready."
-          }
-        }
-      }
-    },
-    "RECOMENDADO": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "RECOMMENDED"
-          }
-        }
-      }
-    },
-    "RECORDATORIOS": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "REMINDERS"
-          }
-        }
-      }
-    },
-    "REGIÓN": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "REGION"
-          }
-        }
-      }
-    },
-    "RESUMEN DEL DÍA": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "TODAY'S SUMMARY"
-          }
-        }
-      }
-    },
-    "Racha de %lld días": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%lld-day streak"
-          }
-        }
-      }
-    },
-    "Reanalizar": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Reanalyze"
-          }
-        }
-      }
-    },
-    "Reanudar": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Resume"
-          }
-        }
-      }
-    },
-    "Recordatorio diario": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Daily reminder"
-          }
-        }
-      }
-    },
-    "Registrar comida con la cámara": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Log a meal with the camera"
-          }
-        }
-      }
-    },
-    "Registrar mi primera comida": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Log my first meal"
-          }
-        }
-      }
-    },
-    "Reintentar con Nube": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Retry with Cloud"
-          }
-        }
-      }
-    },
-    "Restablecer las sugeridas": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Reset to suggested"
-          }
-        }
-      }
-    },
-    "Revisa tu conexión a internet e inténtalo de nuevo.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Check your internet connection and try again."
-          }
-        }
-      }
-    },
-    "Running": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Running"
-          }
-        }
-      }
-    },
-    "SALUD": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "HEALTH"
-          }
-        }
-      }
-    },
-    "Se borra todo: diario, fotos, metas.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "This deletes everything: diary, photos, goals."
-          }
-        }
-      }
-    },
-    "Se cortó la conexión": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Connection lost"
-          }
-        }
-      }
-    },
-    "Se cortó la descarga (%@). Lo descargado no se pierde: retomamos desde donde quedó.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "The download stopped (%@). What you've downloaded isn't lost — we'll resume where it left off."
-          }
-        }
-      }
-    },
-    "Seguir editando": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Keep editing"
-          }
-        }
-      }
-    },
-    "Semana del %lld al %lld": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Week of the %1$lld–%2$lld"
-          }
-        }
-      }
-    },
-    "Sexo": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Sex"
-          }
-        }
-      }
-    },
-    "Sigues un plan de un profesional: cárgalo a mano": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "You're following a professional's plan: enter it manually"
-          }
-        }
-      }
-    },
-    "Sin conexión con la nube — analicé con el motor de tu iPhone.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "No cloud connection — I analyzed it with your iPhone's engine."
-          }
-        }
-      }
-    },
-    "Sin conexión con la nube — usé el modelo de tu iPhone.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Couldn't reach the cloud — I used the model on your iPhone."
-          }
-        }
-      }
-    },
-    "Sincronizar con Salud": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Sync with Health"
-          }
-        }
-      }
-    },
-    "Sostener tu peso y comer mejor": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Maintain your weight and eat better"
-          }
-        }
-      }
-    },
-    "Todavía no registraste nada": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "You haven't logged anything yet"
-          }
-        }
-      }
-    },
-    "Tomar foto": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Take photo"
-          }
-        }
-      }
-    },
-    "Trabajo sentado, poco movimiento": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Desk job, little movement"
-          }
-        }
-      }
-    },
-    "Tu archivo está listo": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Your file is ready"
-          }
-        }
-      }
-    },
-    "Tu diario arranca hoy": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Your diary starts today"
-          }
-        }
-      }
-    },
-    "Tu diario queda guardado. Puedes volver a entrar con tu Apple ID cuando quieras.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Your diary stays saved. You can sign back in with your Apple ID anytime."
-          }
-        }
-      }
-    },
-    "Tu meta": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Your goal"
-          }
-        }
-      }
-    },
-    "Tu plan sugerido": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Your suggested plan"
-          }
-        }
-      }
-    },
-    "Tu plato": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Your plate"
-          }
-        }
-      }
-    },
-    "Tus comidas\nson tuyas": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Your meals\nare yours"
-          }
-        }
-      }
-    },
-    "Tus macros, con una foto": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Your macros, from a photo"
-          }
-        }
-      }
-    },
-    "Tómale una foto\na tu plato": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Snap a photo\nof your plate"
-          }
-        }
-      }
-    },
-    "Tómale una foto a tu próxima comida y Foodia calcula los macros por vos.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Snap a photo of your next meal and Foodia calculates the macros for you."
-          }
-        }
-      }
-    },
-    "Una foto y listo — no pierdas tu racha 🔥": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "One photo and you're done — don't lose your streak 🔥"
-          }
-        }
-      }
-    },
-    "Usar este plan": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Use this plan"
-          }
-        }
-      }
-    },
-    "Ver todo": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "See all"
-          }
-        }
-      }
-    },
-    "Volumen": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Bulk"
-          }
-        }
-      }
-    },
-    "Volumen agresivo": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Aggressive bulk"
-          }
-        }
-      }
-    },
-    "Volumen limpio": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Lean bulk"
-          }
-        }
-      }
-    },
-    "Yoga / pilates": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Yoga / pilates"
-          }
-        }
-      }
-    },
-    "de %lld kcal": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "of %lld kcal"
-          }
-        }
-      }
-    },
-    "días": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "days"
-          }
-        }
-      }
-    },
-    "el backend rechazó la API key": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "the backend rejected the API key"
-          }
-        }
-      }
-    },
-    "el backend respondió %lld": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "the backend returned %lld"
-          }
-        }
-      }
-    },
-    "en meta ✓": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "on target ✓"
-          }
-        }
-      }
-    },
-    "kcal": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "kcal"
-          }
-        }
-      }
-    },
-    "meta %lld kcal": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "goal %lld kcal"
-          }
-        }
-      }
-    },
-    "objetivo del día": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "today's goal"
-          }
-        }
-      }
-    },
-    "promedio %lld kcal": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "average %lld kcal"
-          }
-        }
-      }
-    },
-    "respuesta inesperada del backend": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "unexpected backend response"
-          }
-        }
-      }
-    },
-    "· %lld comida%@": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "· %1$lld meal%2$@"
+    "%lld / %lld ml" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$lld / %2$lld ml"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "new",
-            "value": "· %1$lld comida%2$@"
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$lld / %2$lld ml"
           }
         }
       }
     },
-    "¿Cuál es tu objetivo?": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "What's your goal?"
+    "%lld %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$lld %2$@"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$lld %2$@"
           }
         }
       }
     },
-    "¿Cuánto te mueves?": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "How active are you?"
+    "%lld g prot · %lld g carbos · %lld g grasas" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$lld g protein · %2$lld g carbs · %3$lld g fat"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$lld g prot · %2$lld g carbos · %3$lld g grasas"
           }
         }
       }
     },
-    "¿Descartar este análisis?": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Discard this analysis?"
+    "%lld gramos" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld grams"
           }
         }
       }
     },
-    "¿Eliminar el modelo local (%@)? Vas a necesitar internet para analizar comidas hasta que lo vuelvas a descargar.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Delete the local model (%@)? You'll need internet to analyze meals until you download it again."
+    "%lld kcal" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld kcal"
           }
         }
       }
     },
-    "¿Qué comida es?": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Which meal is this?"
+    "%lld kcal / 100 g" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld kcal / 100 g"
           }
         }
       }
     },
-    "¿Qué haces? (puedes elegir varios)": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "What do you do? (you can pick several)"
+    "＋ 500 ml" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "＋ 500 ml"
           }
         }
       }
     },
-    "¿Seguro? No hay vuelta atrás.": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Are you sure? There's no going back."
+    "＋ Vaso · 250 ml" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "＋ Glass · 250 ml"
           }
         }
       }
     },
-    "¿Ya registraste tu comida?": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Logged your meal yet?"
+    "+%lld kcal" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "+%lld kcal"
           }
         }
       }
     },
-    "…": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "…"
+    "+0,2 kg por semana" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "+0.2 kg per week"
           }
         }
       }
     },
-    "−0,25 kg por semana": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "−0.25 kg per week"
+    "+0,4 kg por semana" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "+0.4 kg per week"
           }
         }
       }
     },
-    "−0,4 kg por semana, sin pasar hambre": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "−0.4 kg per week, without going hungry"
+    "−0,4 kg por semana, sin pasar hambre" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "−0.4 kg per week, without going hungry"
           }
         }
       }
     },
-    "−0,6 kg por semana": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "−0.6 kg per week"
+    "−0,6 kg por semana" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "−0.6 kg per week"
           }
         }
       }
     },
-    "⚠️": {
-      "extractionState": "stale",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⚠️"
+    "−0,25 kg por semana" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "−0.25 kg per week"
           }
         }
       }
     },
-    "⚽ Fútbol": {
-      "extractionState": "stale",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "⚽ Soccer"
+    "⚠️" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⚠️"
           }
         }
       }
     },
-    "❤️": {
-      "extractionState": "stale",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "❤️"
+    "⚽ Fútbol" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⚽ Soccer"
           }
         }
       }
     },
-    "＋ 500 ml": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "＋ 500 ml"
+    "❤️" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "❤️"
           }
         }
       }
     },
-    "＋ Vaso · 250 ml": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "＋ Glass · 250 ml"
+    "🌎" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🌎"
           }
         }
       }
     },
-    "🌎": {
-      "extractionState": "stale",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "🌎"
+    "🏃 Running" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🏃 Running"
           }
         }
       }
     },
-    "🏃 Running": {
-      "extractionState": "stale",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "🏃 Running"
+    "🏊 Natación" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🏊 Swimming"
           }
         }
       }
     },
-    "🏊 Natación": {
-      "extractionState": "stale",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "🏊 Swimming"
+    "🏋️ Fuerza" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🏋️ Strength"
           }
         }
       }
     },
-    "🏋️ Fuerza": {
-      "extractionState": "stale",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "🏋️ Strength"
+    "💡" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "💡"
           }
         }
       }
     },
-    "💡": {
-      "extractionState": "stale",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "💡"
+    "💧" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "💧"
           }
         }
       }
     },
-    "💧": {
-      "extractionState": "stale",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "💧"
+    "📡" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "📡"
           }
         }
       }
     },
-    "📡": {
-      "extractionState": "stale",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "📡"
+    "📦" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "📦"
           }
         }
       }
     },
-    "📦": {
-      "extractionState": "stale",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "📦"
+    "📷" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "📷"
           }
         }
       }
     },
-    "📷": {
-      "extractionState": "stale",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "📷"
+    "🔒" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🔒"
           }
         }
       }
     },
-    "🔒": {
-      "extractionState": "stale",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "🔒"
+    "🔔" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🔔"
           }
         }
       }
     },
-    "🔔": {
-      "extractionState": "stale",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "🔔"
+    "🔥" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🔥"
           }
         }
       }
     },
-    "🔥": {
-      "extractionState": "stale",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "🔥"
+    "🤔" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🤔"
           }
         }
       }
     },
-    "🚴 Ciclismo": {
-      "extractionState": "stale",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "🚴 Cycling"
+    "🥗" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🥗"
           }
         }
       }
     },
-    "🤔": {
-      "extractionState": "stale",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "🤔"
+    "🧘 Yoga / pilates" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🧘 Yoga / Pilates"
           }
         }
       }
     },
-    "🥗": {
-      "extractionState": "stale",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "🥗"
+    "🧠" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🧠"
           }
         }
       }
     },
-    "🧘 Yoga / pilates": {
-      "extractionState": "stale",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "🧘 Yoga / Pilates"
+    "🚴 Ciclismo" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🚴 Cycling"
           }
         }
       }
     },
-    "🧠": {
-      "extractionState": "stale",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "🧠"
+    "1–2 veces por semana" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "1–2 times a week"
+          }
+        }
+      }
+    },
+    "3–5 veces por semana" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "3–5 times a week"
+          }
+        }
+      }
+    },
+    "6 o más veces por semana" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "6 or more times a week"
+          }
+        }
+      }
+    },
+    "100 % privado · funciona sin conexión" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "100% private · works offline"
+          }
+        }
+      }
+    },
+    "640 kcal · P 24 g · C 68 g · G 29 g" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "640 kcal · P 24 g · C 68 g · F 29 g"
+          }
+        }
+      }
+    },
+    "A las 20:30, si aún no registraste tu comida" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "At 8:30 PM, if you haven't logged a meal yet"
+          }
+        }
+      }
+    },
+    "Abrir Ajustes" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Open Settings"
+          }
+        }
+      }
+    },
+    "Activa el permiso en Salud → Compartir → Foodia." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enable the permission in Health → Sharing → Foodia."
+          }
+        }
+      }
+    },
+    "Activa las notificaciones en Ajustes → Foodia → Notificaciones." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enable notifications in Settings → Foodia → Notifications."
+          }
+        }
+      }
+    },
+    "Actualizado %@" : {
+
+    },
+    "Agregar componente" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Add component"
+          }
+        }
+      }
+    },
+    "Agua" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Water"
+          }
+        }
+      }
+    },
+    "Ahora no" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Not now"
+          }
+        }
+      }
+    },
+    "Ajustes" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Settings"
+          }
+        }
+      }
+    },
+    "Al terminar, toca Reanalizar para que la IA use tu contexto." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "When you're done, tap Reanalyze so the AI uses your context."
+          }
+        }
+      }
+    },
+    "Algo de ejercicio, caminatas" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Some exercise, walking"
+          }
+        }
+      }
+    },
+    "Almuerzo" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lunch"
+          }
+        }
+      }
+    },
+    "Altura" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Height"
+          }
+        }
+      }
+    },
+    "Analizar" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Analyze"
+          }
+        }
+      }
+    },
+    "Analizar con Local" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Analyze with Local"
+          }
+        }
+      }
+    },
+    "Anota tu peso y medidas cada tanto para ver tu evolución en un gráfico." : {
+
+    },
+    "Apple nunca nos comparte tu nombre, y puedes\nocultar tu correo real con «Ocultar mi correo»." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apple never shares your name with us, and you can\nhide your real email with \"Hide My Email\"."
+          }
+        }
+      }
+    },
+    "Apple Vision (clasificador)" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apple Vision (classifier)"
+          }
+        }
+      }
+    },
+    "Aún no registras medidas" : {
+
+    },
+    "Auto · usó Local" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Auto · used Local"
+          }
+        }
+      }
+    },
+    "Automático" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Automatic"
+          }
+        }
+      }
+    },
+    "Ayer, %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yesterday, %@"
+          }
+        }
+      }
+    },
+    "Bajar grasa manteniendo el músculo" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lose fat while keeping muscle"
+          }
+        }
+      }
+    },
+    "Brazo" : {
+
+    },
+    "Buscar alimento" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Search foods"
+          }
+        }
+      }
+    },
+    "Cadera" : {
+
+    },
+    "Calculando macros" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Calculating macros"
+          }
+        }
+      }
+    },
+    "Calorías" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Calories"
+          }
+        }
+      }
+    },
+    "Calorías: %lld de %lld%@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Calories: %1$lld of %2$lld%3$@"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Calorías: %1$lld de %2$lld%3$@"
+          }
+        }
+      }
+    },
+    "Cancelar" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancel"
+          }
+        }
+      }
+    },
+    "Carbohidratos" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carbs"
+          }
+        }
+      }
+    },
+    "Carbos" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carbs"
+          }
+        }
+      }
+    },
+    "Carga los números de tu profesional" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enter the numbers from your professional"
+          }
+        }
+      }
+    },
+    "Cargando el modelo local…" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Loading the local model…"
+          }
+        }
+      }
+    },
+    "Cargando en memoria…" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Loading into memory…"
+          }
+        }
+      }
+    },
+    "Cargar la comida a mano" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Log the meal manually"
+          }
+        }
+      }
+    },
+    "Casi nada" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Almost none"
+          }
+        }
+      }
+    },
+    "Cena" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dinner"
+          }
+        }
+      }
+    },
+    "Cerrar" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Close"
+          }
+        }
+      }
+    },
+    "Cerrar sesión" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sign out"
+          }
+        }
+      }
+    },
+    "Ciclismo" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cycling"
+          }
+        }
+      }
+    },
+    "Cintura" : {
+
+    },
+    "Comida guardada" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Meal saved"
+          }
+        }
+      }
+    },
+    "Comidas" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Meals"
+          }
+        }
+      }
+    },
+    "Comidas de hoy" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Today's meals"
+          }
+        }
+      }
+    },
+    "Compartir foodia-export.json" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Share foodia-export.json"
+          }
+        }
+      }
+    },
+    "Con esto calculamos tu gasto diario y tus metas. Queda solo en tu iPhone." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "We use this to calculate your daily burn and your goals. It stays on your iPhone."
+          }
+        }
+      }
+    },
+    "Con Local, tus fotos nunca salen de tu iPhone." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "With Local, your photos never leave your iPhone."
+          }
+        }
+      }
+    },
+    "Con tu cuenta, el diario y tus metas quedan respaldados y se sincronizan entre tus dispositivos." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "With your account, your diary and goals are backed up and synced across your devices."
+          }
+        }
+      }
+    },
+    "Con tu país, la IA usa los nombres de comida de tu región (palta, aguacate…)." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "With your country, the AI uses your region's food names (eggplant, aubergine…)."
+          }
+        }
+      }
+    },
+    "Continuar" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Continue"
+          }
+        }
+      }
+    },
+    "Continuar…" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Continue…"
+          }
+        }
+      }
+    },
+    "Cuando registres tu primera comida, aquí verás tus días y tu tendencia semanal." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Once you log your first meal, you'll see your days and weekly trend here."
+          }
+        }
+      }
+    },
+    "Cuello" : {
+
+    },
+    "Cuéntanos de ti" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tell us about yourself"
+          }
+        }
+      }
+    },
+    "Cuéntanos qué comiste — con cantidades si las sabes — y la IA estima los macros." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tell us what you ate — with amounts if you know them — and the AI estimates the macros."
+          }
+        }
+      }
+    },
+    "DATOS Y PRIVACIDAD" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DATA & PRIVACY"
+          }
+        }
+      }
+    },
+    "de %lld kcal" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "of %lld kcal"
+          }
+        }
+      }
+    },
+    "Déficit calórico" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Calorie deficit"
+          }
+        }
+      }
+    },
+    "Déficit intenso" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Intense deficit"
+          }
+        }
+      }
+    },
+    "Déficit moderado" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Moderate deficit"
+          }
+        }
+      }
+    },
+    "Déficit suave" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Light deficit"
+          }
+        }
+      }
+    },
+    "Define cuántas calorías te sugerimos por día." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sets how many calories we suggest per day."
+          }
+        }
+      }
+    },
+    "Desayuno" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Breakfast"
+          }
+        }
+      }
+    },
+    "Descargando… %lld %%" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Downloading… %lld%%"
+          }
+        }
+      }
+    },
+    "Descargar" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Download"
+          }
+        }
+      }
+    },
+    "Descargar ahora" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Download now"
+          }
+        }
+      }
+    },
+    "Descartar" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Discard"
+          }
+        }
+      }
+    },
+    "Describe tu comida" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Describe your meal"
+          }
+        }
+      }
+    },
+    "Detectamos %lld componente%@ · ajusta los gramos" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "We detected %1$lld component%2$@ · adjust the grams"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Detectamos %1$lld componente%2$@ · ajusta los gramos"
+          }
+        }
+      }
+    },
+    "Detectando alimentos" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Detecting food"
+          }
+        }
+      }
+    },
+    "Detectando alimentos…" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Detecting food…"
+          }
+        }
+      }
+    },
+    "Detener dictado" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stop dictation"
+          }
+        }
+      }
+    },
+    "Día" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Day"
+          }
+        }
+      }
+    },
+    "días" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "days"
+          }
+        }
+      }
+    },
+    "Días" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Days"
+          }
+        }
+      }
+    },
+    "Dictar comida" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dictate meal"
+          }
+        }
+      }
+    },
+    "Dictar contexto" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dictate context"
+          }
+        }
+      }
+    },
+    "Disponible cuando termine la descarga" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Available when the download finishes"
+          }
+        }
+      }
+    },
+    "Edad" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Age"
+          }
+        }
+      }
+    },
+    "Ej.: 2 huevos revueltos con una arepa y jugo de naranja" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "E.g.: 2 scrambled eggs with toast and orange juice"
+          }
+        }
+      }
+    },
+    "El backend no está configurado en este build." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The backend isn't configured in this build."
+          }
+        }
+      }
+    },
+    "el backend rechazó la API key" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "the backend rejected the API key"
+          }
+        }
+      }
+    },
+    "el backend respondió %lld" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "the backend returned %lld"
+          }
+        }
+      }
+    },
+    "El modelo local falló en esta foto; usé Apple Vision." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The local model failed on this photo; I used Apple Vision."
+          }
+        }
+      }
+    },
+    "El modelo no detectó comida; prueba con Vision o agrega componentes a mano." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The model didn't detect any food; try Vision or add components by hand."
+          }
+        }
+      }
+    },
+    "El modelo no devolvió una respuesta interpretable." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The model didn't return an interpretable response."
+          }
+        }
+      }
+    },
+    "El motor Nube necesita internet y no pudimos llegar. Tu foto está a salvo: puedes reintentar o analizarla aquí mismo con el motor Local." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The Cloud engine needs internet and we couldn't reach it. Your photo is safe: you can retry or analyze it right here with the Local engine."
+          }
+        }
+      }
+    },
+    "El reconocimiento de voz no está disponible." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Speech recognition isn't available."
+          }
+        }
+      }
+    },
+    "Elegir alimento" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Choose food"
+          }
+        }
+      }
+    },
+    "Elegir de la galería" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Choose from gallery"
+          }
+        }
+      }
+    },
+    "Eliminar" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delete"
+          }
+        }
+      }
+    },
+    "Eliminar todo" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delete all"
+          }
+        }
+      }
+    },
+    "Eliminar todos mis datos…" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delete all my data…"
+          }
+        }
+      }
+    },
+    "Eliminar…" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delete…"
+          }
+        }
+      }
+    },
+    "En meta" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "On target"
+          }
+        }
+      }
+    },
+    "en meta ✓" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "on target ✓"
+          }
+        }
+      }
+    },
+    "Encuadra el plato completo, con buena luz" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Frame the whole plate, in good light"
+          }
+        }
+      }
+    },
+    "Entrenamiento intenso casi diario" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Intense training almost every day"
+          }
+        }
+      }
+    },
+    "Entrenas varias veces por semana" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You train several times a week"
+          }
+        }
+      }
+    },
+    "Escribe kcal y macros en Apple Salud" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Writes kcal and macros to Apple Health"
+          }
+        }
+      }
+    },
+    "Escuchando…" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Listening…"
+          }
+        }
+      }
+    },
+    "Esta semana" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This week"
+          }
+        }
+      }
+    },
+    "Este equipo no tiene cámara disponible. Puedes elegir una foto de la galería." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This device doesn't have a camera. You can choose a photo from the gallery."
+          }
+        }
+      }
+    },
+    "Evolución" : {
+
+    },
+    "Excedido" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Over"
+          }
+        }
+      }
+    },
+    "Exportar mis datos" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Export my data"
+          }
+        }
+      }
+    },
+    "Fecha" : {
+
+    },
+    "Foodia" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Foodia"
+          }
+        }
+      }
+    },
+    "Foodia detecta qué hay y estima calorías, proteínas, carbos y grasas en segundos. Tú solo ajustas los gramos." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Foodia detects what's there and estimates calories, protein, carbs, and fat in seconds. You just adjust the grams."
+          }
+        }
+      }
+    },
+    "Foodia necesita la cámara para ver tu plato. Con el motor Local, las fotos no salen de tu teléfono." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Foodia needs the camera to see your plate. With the Local engine, photos never leave your phone."
+          }
+        }
+      }
+    },
+    "Foodia no puede ver tu plato" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Foodia can't see your plate"
+          }
+        }
+      }
+    },
+    "Foodia no vende datos ni guarda tus fotos en servidores. Las fotos analizadas con Nube se descartan al terminar." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Foodia doesn't sell your data or store your photos on servers. Photos analyzed with Cloud are discarded when finished."
+          }
+        }
+      }
+    },
+    "Foodia puede analizar todo en tu iPhone, sin subir nada a internet. Tú eliges el motor:" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Foodia can analyze everything on your iPhone, without uploading anything. You choose the engine:"
+          }
+        }
+      }
+    },
+    "Foto lista" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Photo ready"
+          }
+        }
+      }
+    },
+    "Fuerza" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Strength training"
+          }
+        }
+      }
+    },
+    "Fútbol" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Soccer"
+          }
+        }
+      }
+    },
+    "Ganar músculo con superávit controlado" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gain muscle with a controlled surplus"
+          }
+        }
+      }
+    },
+    "Generado con Apple Intelligence en tu iPhone" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Generated with Apple Intelligence on your iPhone"
+          }
+        }
+      }
+    },
+    "Girar cámara" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Flip camera"
+          }
+        }
+      }
+    },
+    "Gramos" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Grams"
+          }
+        }
+      }
+    },
+    "Grasa corporal" : {
+
+    },
+    "Grasas" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fat"
+          }
+        }
+      }
+    },
+    "Guarda tu progreso" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Save your progress"
+          }
+        }
+      }
+    },
+    "Guardar" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Save"
+          }
+        }
+      }
+    },
+    "Guardar comida" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Save meal"
+          }
+        }
+      }
+    },
+    "Hidratación" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hydration"
+          }
+        }
+      }
+    },
+    "Hidratación: %lld de %lld mililitros" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hydration: %1$lld of %2$lld milliliters"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Hidratación: %1$lld de %2$lld mililitros"
+          }
+        }
+      }
+    },
+    "Historial" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "History"
+          }
+        }
+      }
+    },
+    "HISTORIAL" : {
+
+    },
+    "Hombre" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Male"
+          }
+        }
+      }
+    },
+    "Hoy" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Today"
+          }
+        }
+      }
+    },
+    "Hoy, %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Today, %@"
+          }
+        }
+      }
+    },
+    "Indicación médica" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Medical guidance"
+          }
+        }
+      }
+    },
+    "Instalado · %@ · %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Installed · %1$@ · %2$@"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Instalado · %1$@ · %2$@"
+          }
+        }
+      }
+    },
+    "kcal" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "kcal"
+          }
+        }
+      }
+    },
+    "kg" : {
+
+    },
+    "La descarga se interrumpió" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Download interrupted"
+          }
+        }
+      }
+    },
+    "La foto y tus ajustes se pierden." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The photo and your adjustments will be lost."
+          }
+        }
+      }
+    },
+    "La IA usa los nombres de comida de tu región" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The AI uses your region's food names"
+          }
+        }
+      }
+    },
+    "La imagen no se pudo procesar." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The image couldn't be processed."
+          }
+        }
+      }
+    },
+    "Le negaste el acceso a la cámara (todo bien). Para sacar fotos, actívalo en Ajustes → Foodia → Cámara." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You denied camera access (that's okay). To take photos, turn it on in Settings → Foodia → Camera."
+          }
+        }
+      }
+    },
+    "Listo" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Done"
+          }
+        }
+      }
+    },
+    "Lo único que falta:\nla cámara" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The only thing missing:\nthe camera"
+          }
+        }
+      }
+    },
+    "Local" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Local"
+          }
+        }
+      }
+    },
+    "Mantén presionado un registro para eliminarlo." : {
+
+    },
+    "Mantenimiento" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maintenance"
+          }
+        }
+      }
+    },
+    "Más tarde" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Later"
+          }
+        }
+      }
+    },
+    "Máxima precisión · requiere internet" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maximum accuracy · requires internet"
+          }
+        }
+      }
+    },
+    "Merienda o colación" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Snack"
+          }
+        }
+      }
+    },
+    "Meta" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Goal"
+          }
+        }
+      }
+    },
+    "meta %lld kcal" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "goal %lld kcal"
+          }
+        }
+      }
+    },
+    "Metas" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Goals"
+          }
+        }
+      }
+    },
+    "Metas diarias" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Daily goals"
+          }
+        }
+      }
+    },
+    "METAS DIARIAS" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DAILY GOALS"
+          }
+        }
+      }
+    },
+    "Modelo Foodia Vision" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Foodia Vision model"
+          }
+        }
+      }
+    },
+    "Modelo local (%@)" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Local model (%@)"
+          }
+        }
+      }
+    },
+    "MOTOR DE ANÁLISIS" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ANALYSIS ENGINE"
+          }
+        }
+      }
+    },
+    "Motor Local · sin salir de tu iPhone" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Local engine · never leaves your iPhone"
+          }
+        }
+      }
+    },
+    "Motor Nube · máxima precisión" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cloud engine · maximum accuracy"
+          }
+        }
+      }
+    },
+    "Mujer" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Female"
+          }
+        }
+      }
+    },
+    "Muslo" : {
+
+    },
+    "Natación" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Swimming"
+          }
+        }
+      }
+    },
+    "No descargado · %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Not downloaded · %@"
+          }
+        }
+      }
+    },
+    "No encontramos comida en la foto" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "We couldn't find food in the photo"
+          }
+        }
+      }
+    },
+    "No pudimos iniciar sesión" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "We couldn't sign you in"
+          }
+        }
+      }
+    },
+    "No se pudo cargar el modelo local; usé Apple Vision." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The local model couldn't be loaded; I used Apple Vision."
+          }
+        }
+      }
+    },
+    "Nube" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cloud"
+          }
+        }
+      }
+    },
+    "Nube (Gemini Flash)" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cloud (Gemini Flash)"
+          }
+        }
+      }
+    },
+    "Nube con conexión; si no hay, Local" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cloud when online; otherwise Local"
+          }
+        }
+      }
+    },
+    "Nueva medición" : {
+
+    },
+    "O descríbela sin foto" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Or describe it without a photo"
+          }
+        }
+      }
+    },
+    "objetivo del día" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "today's goal"
+          }
+        }
+      }
+    },
+    "Omitir" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Skip"
+          }
+        }
+      }
+    },
+    "Otro" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Other"
+          }
+        }
+      }
+    },
+    "País" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Country"
+          }
+        }
+      }
+    },
+    "Para dictar, permite el micrófono en Ajustes → Foodia." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "To dictate, allow microphone access in Settings → Foodia."
+          }
+        }
+      }
+    },
+    "Para registrar sin foto se necesita conexión o el modelo local descargado." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Logging without a photo needs a connection or the downloaded local model."
+          }
+        }
+      }
+    },
+    "Para usar el motor Local, primero descarga el modelo (1 GB, se hace una sola vez)." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "To use the Local engine, first download the model (1 GB, one time only)."
+          }
+        }
+      }
+    },
+    "Pecho" : {
+
+    },
+    "Permitir cámara" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Allow camera"
+          }
+        }
+      }
+    },
+    "Peso" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Weight"
+          }
+        }
+      }
+    },
+    "PESO ACTUAL" : {
+
+    },
+    "Peso actualizado" : {
+
+    },
+    "Peso y medidas" : {
+
+    },
+    "PESO Y MEDIDAS" : {
+
+    },
+    "Plan" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Plan"
+          }
+        }
+      }
+    },
+    "Plan personalizado" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Custom plan"
+          }
+        }
+      }
+    },
+    "Prefiero no decir" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prefer not to say"
+          }
+        }
+      }
+    },
+    "Preparando el motor…" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Preparing the engine…"
+          }
+        }
+      }
+    },
+    "promedio %lld kcal" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "average %lld kcal"
+          }
+        }
+      }
+    },
+    "Proteínas" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Protein"
+          }
+        }
+      }
+    },
+    "Puede funcionar 100 % en tu iPhone" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Can run 100% on your iPhone"
+          }
+        }
+      }
+    },
+    "Puede ser la luz, el ángulo, o un plato muy tapado. Cuéntanos qué es y lo intentamos de nuevo." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "It could be the lighting, the angle, or a mostly hidden dish. Tell us what it is and we'll try again."
+          }
+        }
+      }
+    },
+    "Puedes cambiar de etapa cuando quieras; tus metas se recalculan." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You can switch phases anytime; your goals recalculate."
+          }
+        }
+      }
+    },
+    "Puedes cambiarlo cuando quieras en Ajustes." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You can change it anytime in Settings."
+          }
+        }
+      }
+    },
+    "Puedes seguir usando la app; te avisamos cuando esté listo." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You can keep using the app; we'll let you know when it's ready."
+          }
+        }
+      }
+    },
+    "Racha de %lld días" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld-day streak"
+          }
+        }
+      }
+    },
+    "Reanalizar" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reanalyze"
+          }
+        }
+      }
+    },
+    "Reanudar" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Resume"
+          }
+        }
+      }
+    },
+    "Recalcular metas" : {
+
+    },
+    "RECOMENDADO" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "RECOMMENDED"
+          }
+        }
+      }
+    },
+    "Recordatorio diario" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Daily reminder"
+          }
+        }
+      }
+    },
+    "RECORDATORIOS" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "REMINDERS"
+          }
+        }
+      }
+    },
+    "REGIÓN" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "REGION"
+          }
+        }
+      }
+    },
+    "Registra al menos dos mediciones de %@ para ver la tendencia." : {
+
+    },
+    "Registra lo que quieras — todo es opcional." : {
+
+    },
+    "Registrar comida con la cámara" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Log a meal with the camera"
+          }
+        }
+      }
+    },
+    "Registrar medición" : {
+
+    },
+    "Registrar mi primera comida" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Log my first meal"
+          }
+        }
+      }
+    },
+    "Reintentar con Nube" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Retry with Cloud"
+          }
+        }
+      }
+    },
+    "respuesta inesperada del backend" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "unexpected backend response"
+          }
+        }
+      }
+    },
+    "Restablecer las sugeridas" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reset to suggested"
+          }
+        }
+      }
+    },
+    "RESUMEN DEL DÍA" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TODAY'S SUMMARY"
+          }
+        }
+      }
+    },
+    "Revisa tu conexión a internet e inténtalo de nuevo." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Check your internet connection and try again."
+          }
+        }
+      }
+    },
+    "Running" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Running"
+          }
+        }
+      }
+    },
+    "SALUD" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "HEALTH"
+          }
+        }
+      }
+    },
+    "Se borra todo: diario, fotos, metas." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This deletes everything: diary, photos, goals."
+          }
+        }
+      }
+    },
+    "Se cortó la conexión" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Connection lost"
+          }
+        }
+      }
+    },
+    "Se cortó la descarga (%@). Lo descargado no se pierde: retomamos desde donde quedó." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The download stopped (%@). What you've downloaded isn't lost — we'll resume where it left off."
+          }
+        }
+      }
+    },
+    "Seguir editando" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keep editing"
+          }
+        }
+      }
+    },
+    "Semana del %lld al %lld" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Week of the %1$lld–%2$lld"
+          }
+        }
+      }
+    },
+    "Sexo" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sex"
+          }
+        }
+      }
+    },
+    "Sigues un plan de un profesional: cárgalo a mano" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You're following a professional's plan: enter it manually"
+          }
+        }
+      }
+    },
+    "Sin conexión con la nube — analicé con el motor de tu iPhone." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No cloud connection — I analyzed it with your iPhone's engine."
+          }
+        }
+      }
+    },
+    "Sin conexión con la nube — usé el modelo de tu iPhone." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Couldn't reach the cloud — I used the model on your iPhone."
+          }
+        }
+      }
+    },
+    "Sincronizar con Salud" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sync with Health"
+          }
+        }
+      }
+    },
+    "Sostener tu peso y comer mejor" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maintain your weight and eat better"
+          }
+        }
+      }
+    },
+    "Todavía no registraste nada" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You haven't logged anything yet"
+          }
+        }
+      }
+    },
+    "Tómale una foto\na tu plato" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Snap a photo\nof your plate"
+          }
+        }
+      }
+    },
+    "Tómale una foto a tu próxima comida y Foodia calcula los macros por vos." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Snap a photo of your next meal and Foodia calculates the macros for you."
+          }
+        }
+      }
+    },
+    "Tomar foto" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Take photo"
+          }
+        }
+      }
+    },
+    "Trabajo sentado, poco movimiento" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Desk job, little movement"
+          }
+        }
+      }
+    },
+    "Tu archivo está listo" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Your file is ready"
+          }
+        }
+      }
+    },
+    "Tu diario arranca hoy" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Your diary starts today"
+          }
+        }
+      }
+    },
+    "Tu diario queda guardado. Puedes volver a entrar con tu Apple ID cuando quieras." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Your diary stays saved. You can sign back in with your Apple ID anytime."
+          }
+        }
+      }
+    },
+    "Tu meta" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Your goal"
+          }
+        }
+      }
+    },
+    "Tu peso actual pasó a %@ kg. ¿Recalculo tus metas diarias con este peso?" : {
+
+    },
+    "Tu plan sugerido" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Your suggested plan"
+          }
+        }
+      }
+    },
+    "Tu plato" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Your plate"
+          }
+        }
+      }
+    },
+    "Tus comidas\nson tuyas" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Your meals\nare yours"
+          }
+        }
+      }
+    },
+    "Tus macros, con una foto" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Your macros, from a photo"
+          }
+        }
+      }
+    },
+    "Una foto y listo — no pierdas tu racha 🔥" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "One photo and you're done — don't lose your streak 🔥"
+          }
+        }
+      }
+    },
+    "Usar este plan" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Use this plan"
+          }
+        }
+      }
+    },
+    "Ver todo" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "See all"
+          }
+        }
+      }
+    },
+    "Volumen" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bulk"
+          }
+        }
+      }
+    },
+    "Volumen agresivo" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aggressive bulk"
+          }
+        }
+      }
+    },
+    "Volumen limpio" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lean bulk"
+          }
+        }
+      }
+    },
+    "Yoga / pilates" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yoga / pilates"
           }
         }
       }
     }
   },
-  "version": "1.0"
+  "version" : "1.0"
 }
