@@ -5,7 +5,7 @@ import UIKit
 /// mostrarlo offline. Sigue el patrón de `PhotoStore`.
 enum AvatarStore {
     private static var directory: URL {
-        let dir = URL.applicationSupportDirectory.appending(path: "Avatar")
+        let dir = URL.applicationSupportDirectory.appending(path: "Avatar", directoryHint: .isDirectory)
         try? FileManager.default.createDirectory(at: dir, withIntermediateDirectories: true)
         return dir
     }
@@ -17,7 +17,8 @@ enum AvatarStore {
     }
 
     static func load() -> UIImage? {
-        UIImage(contentsOfFile: fileURL.path())
+        guard let data = try? Data(contentsOf: fileURL) else { return nil }
+        return UIImage(data: data)
     }
 
     static func clear() {

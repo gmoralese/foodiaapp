@@ -20,8 +20,13 @@ enum PhotoStore {
     }
 
     static func load(_ filename: String?) -> UIImage? {
-        guard let filename else { return nil }
-        return UIImage(contentsOfFile: directory.appending(path: filename).path())
+        // Data(contentsOf:) usa la URL directa. `UIImage(contentsOfFile: url.path())`
+        // fallaba: .path() devuelve el path percent-encoded (Application%20Support).
+        guard let filename,
+              let data = try? Data(contentsOf: directory.appending(path: filename)) else {
+            return nil
+        }
+        return UIImage(data: data)
     }
 
     static func downscale(_ image: UIImage, maxDimension: CGFloat) -> UIImage {
