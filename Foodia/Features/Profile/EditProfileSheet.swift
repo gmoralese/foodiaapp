@@ -38,6 +38,12 @@ struct EditProfileSheet: View {
             .onChange(of: photoItem) { _, item in
                 Task { await loadPicked(item) }
             }
+            .task {
+                if avatarImage == nil, let path = GoalsStore.shared.profile?.avatarPath {
+                    await AvatarStore.fetchAndCache(path: path)
+                    avatarImage = AvatarStore.load()
+                }
+            }
         }
     }
 

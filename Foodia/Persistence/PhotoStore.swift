@@ -29,7 +29,11 @@ enum PhotoStore {
         guard maxSide > maxDimension else { return image }
         let factor = maxDimension / maxSide
         let newSize = CGSize(width: image.size.width * factor, height: image.size.height * factor)
-        let renderer = UIGraphicsImageRenderer(size: newSize)
+        // scale = 1: el bitmap sale al tamaño de píxeles pedido. Por defecto el
+        // renderer usa la escala del device (2-3×) y no reduciría los píxeles.
+        let format = UIGraphicsImageRendererFormat.default()
+        format.scale = 1
+        let renderer = UIGraphicsImageRenderer(size: newSize, format: format)
         return renderer.image { _ in
             image.draw(in: CGRect(origin: .zero, size: newSize))
         }

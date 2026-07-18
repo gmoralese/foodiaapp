@@ -46,7 +46,15 @@ struct ProfileView: View {
             .padding(.bottom, 24)
         }
         .background(Color.dsBackground)
-        .task { avatarImage = AvatarStore.load() }
+        .task {
+            avatarImage = AvatarStore.load()
+            // Usuario ya logueado: no pasa por el resume del onboarding, así que
+            // si hay avatar en el servidor y no está cacheado, lo bajamos acá.
+            if avatarImage == nil, let path = GoalsStore.shared.profile?.avatarPath {
+                await AvatarStore.fetchAndCache(path: path)
+                avatarImage = AvatarStore.load()
+            }
+        }
         .sheet(isPresented: $showMetasSheet) {
             MetasSheet()
         }

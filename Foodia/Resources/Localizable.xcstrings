@@ -762,6 +762,7 @@
       }
     },
     "Ajustes" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -838,6 +839,7 @@
 
     },
     "Apple nunca nos comparte tu nombre, y puedes\nocultar tu correo real con «Ocultar mi correo»." : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -846,6 +848,9 @@
           }
         }
       }
+    },
+    "Apple solo comparte lo que autorices. Puedes ocultar tu\ncorreo real y editar tu nombre cuando quieras." : {
+
     },
     "Apple Vision (clasificador)" : {
       "localizations" : {
@@ -1454,6 +1459,12 @@
         }
       }
     },
+    "Editar nombre y foto" : {
+
+    },
+    "Editar perfil" : {
+
+    },
     "Ej.: 2 huevos revueltos con una arepa y jugo de naranja" : {
       "localizations" : {
         "en" : {
@@ -2022,6 +2033,7 @@
       }
     },
     "La IA usa los nombres de comida de tu región" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2165,6 +2177,7 @@
       }
     },
     "METAS DIARIAS" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2287,6 +2300,9 @@
         }
       }
     },
+    "NOMBRE" : {
+
+    },
     "Nube" : {
       "localizations" : {
         "en" : {
@@ -2403,6 +2419,12 @@
     "Pecho" : {
 
     },
+    "Perfil" : {
+
+    },
+    "PERFIL" : {
+
+    },
     "Permitir cámara" : {
       "localizations" : {
         "en" : {
@@ -2430,9 +2452,6 @@
 
     },
     "Peso y medidas" : {
-
-    },
-    "PESO Y MEDIDAS" : {
 
     },
     "Plan" : {
@@ -2610,6 +2629,7 @@
       }
     },
     "REGIÓN" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2828,6 +2848,9 @@
         }
       }
     },
+    "Toca para cambiar tu foto" : {
+
+    },
     "Todavía no registraste nada" : {
       "localizations" : {
         "en" : {
@@ -2917,6 +2940,9 @@
           }
         }
       }
+    },
+    "Tu nombre" : {
+
     },
     "Tu peso actual pasó a %@ kg. ¿Recalculo tus metas diarias con este peso?" : {
 
