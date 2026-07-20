@@ -3056,6 +3056,326 @@
           }
         }
       }
+    },
+    "NUTRICIONISTA" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NUTRITIONIST"
+          }
+        }
+      }
+    },
+    "Mis nutricionistas" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "My nutritionists"
+          }
+        }
+      }
+    },
+    "Comparte tu progreso con tu nutricionista" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Share your progress with your nutritionist"
+          }
+        }
+      }
+    },
+    "Sin nutricionista" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No nutritionist"
+          }
+        }
+      }
+    },
+    "Si trabajas con un nutricionista, ingresa el código que te compartió para que vea tu progreso." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you work with a nutritionist, enter the code they shared so they can see your progress."
+          }
+        }
+      }
+    },
+    "Ingresar código" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enter code"
+          }
+        }
+      }
+    },
+    "No pudimos cargar tus vínculos. Revisa tu conexión." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "We couldn't load your links. Check your connection."
+          }
+        }
+      }
+    },
+    "Dejar de compartir" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stop sharing"
+          }
+        }
+      }
+    },
+    "VINCULADOS" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "LINKED"
+          }
+        }
+      }
+    },
+    "Ingresar otro código" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enter another code"
+          }
+        }
+      }
+    },
+    "Puedes dejar de compartir con cualquiera cuando quieras; el acceso se corta al instante." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You can stop sharing with anyone whenever you want; access is cut off instantly."
+          }
+        }
+      }
+    },
+    "Vinculado %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Linked %@"
+          }
+        }
+      }
+    },
+    "¿Dejar de compartir tu progreso con %@? Puedes volver a vincularte cuando quieras." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stop sharing your progress with %@? You can link again whenever you want."
+          }
+        }
+      }
+    },
+    "¿Dejar de compartir tu progreso?" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stop sharing your progress?"
+          }
+        }
+      }
+    },
+    "Agregar nutricionista" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Add nutritionist"
+          }
+        }
+      }
+    },
+    "CÓDIGO DE INVITACIÓN" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "INVITATION CODE"
+          }
+        }
+      }
+    },
+    "Ej. ABCD2345" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "e.g. ABCD2345"
+          }
+        }
+      }
+    },
+    "Pídele el código a tu nutricionista. Vence a los 7 días de generarlo." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ask your nutritionist for the code. It expires 7 days after it's generated."
+          }
+        }
+      }
+    },
+    "Buscar" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Search"
+          }
+        }
+      }
+    },
+    "%@ quiere acompañarte" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ wants to support you"
+          }
+        }
+      }
+    },
+    "Al aceptar, va a poder ver:" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "By accepting, they'll be able to see:"
+          }
+        }
+      }
+    },
+    "Tus comidas con foto y sus macros" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Your meals with photos and their macros"
+          }
+        }
+      }
+    },
+    "Tu hidratación" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Your hydration"
+          }
+        }
+      }
+    },
+    "Tu peso y medidas" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Your weight and measurements"
+          }
+        }
+      }
+    },
+    "Tus metas diarias" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Your daily goals"
+          }
+        }
+      }
+    },
+    "En consultas también podrá registrar mediciones y ajustar tus metas. No puede acceder a tu cuenta de Apple ni a otras apps o fotos de tu teléfono, y puedes dejar de compartir cuando quieras." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "During visits they can also record measurements and adjust your goals. They can't access your Apple account or other apps or photos on your phone, and you can stop sharing whenever you want."
+          }
+        }
+      }
+    },
+    "Aceptar y compartir" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Accept and share"
+          }
+        }
+      }
+    },
+    "No encontramos ese código. Revisa que esté bien escrito." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "We couldn't find that code. Make sure it's typed correctly."
+          }
+        }
+      }
+    },
+    "Esa invitación venció o ya no está disponible. Pídele una nueva a tu nutricionista." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "That invitation expired or is no longer available. Ask your nutritionist for a new one."
+          }
+        }
+      }
+    },
+    "Ya tienes un vínculo activo con ese nutricionista." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You already have an active link with that nutritionist."
+          }
+        }
+      }
+    },
+    "Ese es tu propio código; no puedes vincularte contigo." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "That's your own code; you can't link with yourself."
+          }
+        }
+      }
+    },
+    "No pudimos conectar. Revisa tu conexión e inténtalo de nuevo." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "We couldn't connect. Check your connection and try again."
+          }
+        }
+      }
     }
   },
   "version" : "1.0"

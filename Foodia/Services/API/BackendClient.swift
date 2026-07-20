@@ -78,6 +78,29 @@ struct BackendClient {
         try await delete("v1/measurements/\(id.uuidString.lowercased())")
     }
 
+    // MARK: Nutricionistas (vínculo profesional)
+
+    /// Vínculos activos del paciente ("Mis nutricionistas").
+    func professionalLinks() async throws -> [NutritionistLink] {
+        let envelope: ProfessionalLinksEnvelope = try await get("v1/professional-links")
+        return envelope.links
+    }
+
+    /// Preview de una invitación por código (quién invita), antes de aceptar.
+    func previewInvite(code: String) async throws -> InvitePreview {
+        try await get("v1/professional-invites/\(code)")
+    }
+
+    /// Acepta una invitación: crea el vínculo con el nutricionista.
+    func acceptInvite(code: String) async throws -> NutritionistLink {
+        try await send("POST", "v1/professional-links", body: AcceptCodePayload(code: code))
+    }
+
+    /// El paciente revoca un vínculo (idempotente: 404 cuenta como éxito).
+    func revokeProfessionalLink(id: UUID) async throws {
+        try await delete("v1/professional-links/\(id.uuidString.lowercased())")
+    }
+
     // MARK: Plomería
 
     private func pageQuery(cursor: String?, limit: Int) -> [URLQueryItem] {
@@ -300,4 +323,13 @@ struct RemoteMeasurement: Decodable {
 struct RemoteMeasurementPage: Decodable {
     let items: [RemoteMeasurement]
     let nextCursor: String?
+}
+
+/// Envoltorio de `GET /v1/professional-links` → `{ links: [...] }`.
+private struct ProfessionalLinksEnvelope: Decodable {
+    let links: [NutritionistLink]
+}
+
+private struct AcceptCodePayload: Encodable {
+    let code: String
 }

@@ -14,6 +14,7 @@ struct ProfileView: View {
     @State private var vlmManager = VLMModelManager.shared
     @State private var showMetasSheet = false
     @State private var showBodyMeasurements = false
+    @State private var showNutritionists = false
     @State private var showEditProfile = false
     @State private var avatarImage: UIImage?
     @State private var confirmDeleteModel = false
@@ -35,6 +36,7 @@ struct ProfileView: View {
                     .font(.dsScreenTitle)
                     .foregroundStyle(Color.dsTextPrimary)
                 profileSection
+                nutritionistsSection
                 engineSection
                 modelCard
                 healthSection
@@ -60,6 +62,9 @@ struct ProfileView: View {
         }
         .sheet(isPresented: $showBodyMeasurements) {
             BodyMeasurementsSheet()
+        }
+        .sheet(isPresented: $showNutritionists) {
+            MyNutritionistsView()
         }
         .sheet(isPresented: $showEditProfile, onDismiss: { avatarImage = AvatarStore.load() }) {
             EditProfileSheet()
@@ -156,6 +161,37 @@ struct ProfileView: View {
             }
             .padding(13)
             .contentShape(.rect)
+        }
+    }
+
+    // MARK: Mis nutricionistas
+
+    private var nutritionistsSection: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            sectionLabel("NUTRICIONISTA")
+            Button {
+                showNutritionists = true
+            } label: {
+                HStack(spacing: 12) {
+                    DSIcon(id: "stethoscope", size: 20, tint: .dsGreenText)
+                    VStack(alignment: .leading, spacing: 2) {
+                        Text("Mis nutricionistas")
+                            .font(.dsRowTitle)
+                            .foregroundStyle(Color.dsTextPrimary)
+                        Text("Comparte tu progreso con tu nutricionista")
+                            .font(.caption)
+                            .foregroundStyle(Color.dsTextSecondary)
+                    }
+                    Spacer()
+                    Image(systemName: "chevron.right")
+                        .font(.caption.weight(.semibold))
+                        .foregroundStyle(Color.dsBorderStrong)
+                }
+                .padding(13)
+                .contentShape(.rect)
+            }
+            .buttonStyle(.plain)
+            .background(Color.dsCard, in: .rect(cornerRadius: DSRadius.card, style: .continuous))
         }
     }
 
