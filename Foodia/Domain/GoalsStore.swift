@@ -27,6 +27,11 @@ final class GoalsStore {
     /// la capa de sync empuje el snapshot. Lo setea RootView al arrancar.
     var didChange: (() -> Void)?
 
+    /// true cuando el sync aplicó metas que cambió el nutricionista desde el
+    /// portal (E4). Hoy y Metas muestran un aviso; se baja al descartarlo.
+    /// Transitorio (no se persiste).
+    var goalsUpdatedByPro = false
+
     private init() {
         goals = Self.load(DailyGoals.self, key: Self.goalsKey) ?? .fallback
         planName = UserDefaults.standard.string(forKey: Self.planNameKey) ?? "Sugerido"

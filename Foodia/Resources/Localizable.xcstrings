@@ -3376,6 +3376,26 @@
           }
         }
       }
+    },
+    "Tu nutricionista actualizó tus metas." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Your nutritionist updated your goals."
+          }
+        }
+      }
+    },
+    "Nutricionista" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nutritionist"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"

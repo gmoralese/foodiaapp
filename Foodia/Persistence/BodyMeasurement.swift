@@ -19,6 +19,9 @@ final class BodyMeasurement {
     var remoteID: UUID?
     /// Pendiente de subir al backend (default true: lo local se respalda).
     var needsSync: Bool = true
+    /// true si la registró el nutricionista (recorded_by en el backend), no el
+    /// paciente. Se usa para distinguirla visualmente en "Peso y medidas".
+    var recordedByPro: Bool = false
 
     init(
         measuredAt: Date = .now,

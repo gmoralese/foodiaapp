@@ -31,6 +31,7 @@ struct TodayView: View {
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
                 header
+                NutritionistUpdateBanner()
                 kcalCard
                 if let summary {
                     AISummaryCard(text: summary)

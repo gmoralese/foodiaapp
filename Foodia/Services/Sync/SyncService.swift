@@ -17,6 +17,9 @@ final class SyncService {
 
     private let deletionsKey = "pendingMealDeletions"
     private let measurementDeletionsKey = "pendingMeasurementDeletions"
+    /// updatedAt del perfil que este dispositivo vio por última vez. Reloj del
+    /// last-write-wins de metas (E4). Compartido con `applyToLocalStores`.
+    static let lastProfileUpdatedAtKey = "lastProfileUpdatedAt"
 
     private init() {}
 
@@ -77,7 +80,13 @@ final class SyncService {
                 patch.name = profile.name
                 patch.avatarPath = profile.avatarPath
             }
-            try? await BackendClient.shared.updateProfile(patch)
+            // Al empujar, registramos el updatedAt devuelto: así el próximo pull
+            // no confunde nuestro propio cambio con uno del nutricionista.
+            if let updated = try? await BackendClient.shared.updateProfile(patch) {
+                UserDefaults.standard.set(
+                    updated.updatedAt, forKey: Self.lastProfileUpdatedAtKey
+                )
+            }
         }
     }
 
@@ -124,6 +133,8 @@ final class SyncService {
         await pushPendingMeals(context)
         await pushPendingWater(context)
         await pushPendingMeasurements(context)
+        await pullMeasurements(context)
+        await pullProfileGoals()
     }
 
     private func drainDeletions() async {
@@ -264,6 +275,79 @@ final class SyncService {
             }
         }
         try? context.save()
+    }
+
+    // MARK: Pull incremental (mediciones y metas del nutricionista)
+
+    /// Trae la primera página de mediciones y fusiona por remoteID las que no
+    /// tenemos (las que registró el nutricionista en consulta). Si entre ellas
+    /// hay un peso más reciente, actualiza el peso del perfil.
+    private func pullMeasurements(_ context: ModelContext) async {
+        guard let page = try? await BackendClient.shared.measurements(cursor: nil) else { return }
+        let existing = (try? context.fetch(FetchDescriptor<BodyMeasurement>())) ?? []
+        let known = Set(existing.compactMap(\.remoteID))
+        let fresh = page.items.filter { !known.contains($0.id) }
+        guard !fresh.isEmpty else { return }
+
+        for measurement in fresh {
+            let local = BodyMeasurement(
+                measuredAt: measurement.measuredAt,
+                weightKg: measurement.weightKg,
+                waistCm: measurement.waistCm,
+                hipCm: measurement.hipCm,
+                chestCm: measurement.chestCm,
+                armCm: measurement.armCm,
+                thighCm: measurement.thighCm,
+                neckCm: measurement.neckCm,
+                bodyFatPct: measurement.bodyFatPct
+            )
+            local.remoteID = measurement.id
+            local.needsSync = false
+            local.recordedByPro = measurement.recordedBy != nil
+            context.insert(local)
+        }
+        try? context.save()
+
+        // Peso del perfil: una medición de peso del pro más reciente lo actualiza.
+        let latestKnownWeightDate = existing
+            .filter { $0.weightKg != nil }
+            .map(\.measuredAt)
+            .max()
+        let newWeight = RemoteMerge.latestNewWeight(
+            fresh: fresh.map { (date: $0.measuredAt, weight: $0.weightKg) },
+            latestKnownWeightDate: latestKnownWeightDate
+        )
+        if let newWeight { GoalsStore.shared.updateWeight(newWeight) }
+    }
+
+    /// Trae el perfil y, si el nutricionista cambió las metas desde el portal
+    /// (updatedAt avanzó desde fuera del dispositivo), las aplica y avisa. El set
+    /// directo de `goals` NO dispara didChange, así no hay ping-pong con el push.
+    private func pullProfileGoals() async {
+        guard let remote = try? await BackendClient.shared.profile() else { return }
+        let lastKnown = UserDefaults.standard
+            .object(forKey: Self.lastProfileUpdatedAtKey) as? Date
+
+        if let kcal = remote.goalKcal, let protein = remote.goalProteinG,
+           let carbs = remote.goalCarbsG, let fat = remote.goalFatG {
+            let remoteGoals = DailyGoals(
+                kcal: kcal, protein: protein, carbs: carbs, fat: fat,
+                waterMl: remote.goalWaterMl
+            )
+            let decision = RemoteMerge.goalsDecision(
+                remoteGoals: remoteGoals,
+                remotePlanName: remote.planName,
+                remoteUpdatedAt: remote.updatedAt,
+                localGoals: GoalsStore.shared.goals,
+                lastKnownUpdatedAt: lastKnown
+            )
+            if case let .applyRemote(goals, planName) = decision {
+                GoalsStore.shared.goals = goals // set directo: no dispara didChange
+                if let planName { GoalsStore.shared.planName = planName }
+                GoalsStore.shared.goalsUpdatedByPro = true
+            }
+        }
+        UserDefaults.standard.set(remote.updatedAt, forKey: Self.lastProfileUpdatedAtKey)
     }
 
     // MARK: Backfill (restauración en dispositivo nuevo)

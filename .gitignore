@@ -12,3 +12,6 @@ tools/vlm-harness/dd/
 
 # Ajustes locales de Claude Code (específicos de la máquina)
 .claude/settings.local.json
+
+# Artefactos del MCP de Playwright (capturas/traces de sesión)
+.playwright-mcp/
