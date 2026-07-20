@@ -102,6 +102,9 @@ extension RemoteProfile {
         if let foodCountry {
             UserDefaults.standard.set(foodCountry, forKey: FoodLocale.countryKey)
         }
+        // Base del last-write-wins de metas: lo que bajamos ahora es "lo conocido",
+        // así el primer sync no confunde estas metas con un cambio del nutricionista.
+        UserDefaults.standard.set(updatedAt, forKey: SyncService.lastProfileUpdatedAtKey)
         // Avatar: si hay uno en el servidor y no está cacheado, bajarlo.
         if let avatarPath, AvatarStore.load() == nil {
             Task { await AvatarStore.fetchAndCache(path: avatarPath) }

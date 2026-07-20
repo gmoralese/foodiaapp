@@ -205,6 +205,10 @@ struct RemoteProfile: Decodable {
     let foodCountry: String?
     let name: String?
     let avatarPath: String?
+    /// Marca temporal del último cambio del perfil en el servidor. Reloj del
+    /// last-write-wins de metas (E4): si avanza desde fuera del dispositivo, el
+    /// nutricionista ajustó las metas.
+    let updatedAt: Date
 }
 
 /// PATCH parcial: los nil no se envían (el backend no toca esos campos).
@@ -318,6 +322,8 @@ struct RemoteMeasurement: Decodable {
     let thighCm: Double?
     let neckCm: Double?
     let bodyFatPct: Double?
+    /// null = la registró el paciente; uuid del pro = la registró el nutricionista.
+    let recordedBy: String?
 }
 
 struct RemoteMeasurementPage: Decodable {

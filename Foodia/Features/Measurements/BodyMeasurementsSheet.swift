@@ -302,9 +302,19 @@ struct BodyMeasurementsSheet: View {
 
     private func historyRow(_ measurement: BodyMeasurement) -> some View {
         VStack(alignment: .leading, spacing: 3) {
-            Text(measurement.measuredAt.formatted(date: .abbreviated, time: .omitted))
-                .font(.dsRowTitle)
-                .foregroundStyle(Color.dsTextPrimary)
+            HStack(spacing: 6) {
+                Text(measurement.measuredAt.formatted(date: .abbreviated, time: .omitted))
+                    .font(.dsRowTitle)
+                    .foregroundStyle(Color.dsTextPrimary)
+                if measurement.recordedByPro {
+                    Text("Nutricionista")
+                        .font(.caption2.weight(.bold))
+                        .foregroundStyle(Color.dsGreenText)
+                        .padding(.horizontal, 6)
+                        .padding(.vertical, 2)
+                        .background(Color.dsGreenTint, in: .capsule)
+                }
+            }
             Text(summary(measurement))
                 .font(.caption)
                 .foregroundStyle(Color.dsTextSecondary)

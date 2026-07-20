@@ -22,6 +22,7 @@ struct GoalsView: View {
                 Text("Metas")
                     .font(.dsScreenTitle)
                     .foregroundStyle(Color.dsTextPrimary)
+                NutritionistUpdateBanner()
                 planCard
                 kcalCard
                 macrosCard
