@@ -33,6 +33,13 @@ final class SyncService {
         Task { await sync() }
     }
 
+    /// Igual que `syncNow()` pero espera a que el ciclo termine. Pensado para el
+    /// pull-to-refresh (`.refreshable`): la UI mantiene el spinner hasta que
+    /// baja lo remoto y los `@Query` se actualizan solos.
+    func refresh() async {
+        await sync()
+    }
+
     /// Marca el meal remoto para borrar (si ya estaba sincronizado) y sincroniza.
     func deleteRemoteMeal(_ remoteMealID: UUID?) {
         guard let remoteMealID else { return }

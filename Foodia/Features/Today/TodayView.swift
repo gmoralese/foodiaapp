@@ -49,6 +49,9 @@ struct TodayView: View {
             .padding(.bottom, 24)
         }
         .background(Color.dsBackground)
+        .refreshable {
+            await SyncService.shared.refresh()
+        }
         .task(id: todayEntries.count) {
             publishWidgetSnapshot()
             await generateSummaryIfPossible()

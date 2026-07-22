@@ -74,6 +74,9 @@ struct HistoryView: View {
                 }
             }
             .background(Color.dsBackground)
+            .refreshable {
+                await SyncService.shared.refresh()
+            }
             .toolbar(.hidden, for: .navigationBar)
             .navigationDestination(for: Date.self) { date in
                 DayDetailView(date: date)

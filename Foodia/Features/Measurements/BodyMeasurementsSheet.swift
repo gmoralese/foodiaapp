@@ -88,6 +88,13 @@ struct BodyMeasurementsSheet: View {
                 }
             }
             .background(Color.dsBackground)
+            .refreshable {
+                await SyncService.shared.refresh()
+            }
+            .task {
+                // Al abrir, baja lo que el nutricionista haya registrado desde el portal.
+                await SyncService.shared.refresh()
+            }
             .navigationTitle("Peso y medidas")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
