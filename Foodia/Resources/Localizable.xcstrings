@@ -2639,8 +2639,18 @@
         }
       }
     },
-    "Registra al menos dos mediciones de %@ para ver la tendencia." : {
+    "%@ %@" : {
 
+    },
+    "Aún no registras mediciones de %@." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You haven't logged any %@ measurements yet."
+          }
+        }
+      }
     },
     "Registra lo que quieras — todo es opcional." : {
 

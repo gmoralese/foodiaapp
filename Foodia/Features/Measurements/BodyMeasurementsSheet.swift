@@ -241,20 +241,37 @@ struct BodyMeasurementsSheet: View {
                     .background(Color.dsInset, in: .capsule)
                 }
             }
-            if data.count >= 2 {
+            if data.isEmpty {
+                Text("Aún no registras mediciones de \(metric.title.lowercased()).")
+                    .font(.caption)
+                    .foregroundStyle(Color.dsTextSecondary)
+                    .frame(maxWidth: .infinity, minHeight: 120, alignment: .center)
+                    .multilineTextAlignment(.center)
+            } else {
+                // Con una sola medición no hay tendencia: mostramos el punto con su
+                // valor. Con dos o más, la línea une los puntos.
                 Chart(data) { point in
-                    LineMark(
-                        x: .value("Fecha", point.date),
-                        y: .value(metric.title, point.value)
-                    )
-                    .foregroundStyle(Color.dsAccent)
-                    .interpolationMethod(.monotone)
+                    if data.count >= 2 {
+                        LineMark(
+                            x: .value("Fecha", point.date),
+                            y: .value(metric.title, point.value)
+                        )
+                        .foregroundStyle(Color.dsAccent)
+                        .interpolationMethod(.monotone)
+                    }
                     PointMark(
                         x: .value("Fecha", point.date),
                         y: .value(metric.title, point.value)
                     )
                     .foregroundStyle(Color.dsAccent)
-                    .symbolSize(28)
+                    .symbolSize(data.count == 1 ? 60 : 28)
+                    .annotation(position: .top, spacing: 6) {
+                        if data.count == 1 {
+                            Text("\(measurementText(point.value)) \(metric.unit)")
+                                .font(.caption.weight(.semibold))
+                                .foregroundStyle(Color.dsTextSecondary)
+                        }
+                    }
                 }
                 .chartYScale(domain: .automatic(includesZero: false))
                 .chartXAxis {
@@ -270,12 +287,6 @@ struct BodyMeasurementsSheet: View {
                     }
                 }
                 .frame(height: 170)
-            } else {
-                Text("Registra al menos dos mediciones de \(metric.title.lowercased()) para ver la tendencia.")
-                    .font(.caption)
-                    .foregroundStyle(Color.dsTextSecondary)
-                    .frame(maxWidth: .infinity, minHeight: 120, alignment: .center)
-                    .multilineTextAlignment(.center)
             }
         }
         .padding(16)
