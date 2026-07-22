@@ -430,6 +430,7 @@ final class SyncService {
                     )
                     local.remoteID = measurement.id
                     local.needsSync = false
+                    local.recordedByPro = measurement.recordedBy != nil
                     context.insert(local)
                 }
                 cursor = page.nextCursor

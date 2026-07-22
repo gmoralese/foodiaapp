@@ -42,6 +42,9 @@ struct GoalsView: View {
         }
         .background(Color.dsBackground)
         .onAppear(perform: syncFromStore)
+        // Si las metas cambian desde afuera (el nutricionista las ajustó y el
+        // sync las bajó) estando en esta pantalla, refrescamos los steppers.
+        .onChange(of: goalsStore.goals) { syncFromStore() }
         .onChange(of: kcal) { saveIfEdited() }
         .onChange(of: protein) { saveIfEdited() }
         .onChange(of: carbs) { saveIfEdited() }

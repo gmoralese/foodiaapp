@@ -39,6 +39,13 @@ struct RootView: View {
         .onChange(of: scenePhase) { _, phase in
             if phase == .active { SyncService.shared.syncNow() }
         }
+        // El sync por scenePhase puede correr antes de que la sesión esté lista
+        // (o no re-dispararse en un cold-launch de un usuario ya onboarded), así
+        // que también sincronizamos en cuanto hay sesión: garantiza que el pull
+        // de mediciones/metas del nutricionista corra al abrir la app.
+        .onChange(of: AuthService.shared.isAuthenticated) { _, authenticated in
+            if authenticated { SyncService.shared.syncNow() }
+        }
     }
 
     private var mainApp: some View {
