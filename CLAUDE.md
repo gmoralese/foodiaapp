@@ -1,7 +1,7 @@
 # Foodia
 
 App iOS (SwiftUI, Swift 6) que estima macros de comida desde una foto. Tres motores:
-Nube (backend NestJS + Vertex Gemini, repo hermano `../foodia-backend/foodia-backend`),
+Nube (backend NestJS + Vertex Gemini, repo hermano `../backend`),
 VLM local (MLX) y Apple Vision, con fallback en ese orden según preferencia del usuario
 (`EnginePreference`: local/cloud/auto — default auto). El backend corre en Cloud Run
 (proyecto GCP `developer-unknown`, us-central1, cuenta gus.morales@me.com).

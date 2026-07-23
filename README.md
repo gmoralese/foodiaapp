@@ -11,7 +11,7 @@ Tres motores de reconocimiento detrás del mismo flujo (elegible en ⚙️ → M
 Foto (cámara o galería)
   ├─ Nube (opcional): backend NestJS en Cloud Run + Vertex AI Gemini Flash
   │    → máxima precisión; componentes con gramos Y macros estimados
-  │    → repo: ../foodia-backend (contrato en su README)
+  │    → repo: ../backend (contrato en su README)
   ├─ VLM local (LFM2.5-VL 1.6B vía MLX, descarga opcional de ~1 GB)
   │    → detecta TODOS los componentes del plato con gramos estimados
   └─ Apple Vision ClassifyImageRequest (fallback, sin descarga, ~1300 clases)
