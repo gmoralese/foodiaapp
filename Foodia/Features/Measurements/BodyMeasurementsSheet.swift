@@ -456,27 +456,50 @@ private struct AddMeasurementSheet: View {
             errorMessage = error
             return
         }
-        let measurement = BodyMeasurement(
-            measuredAt: draft.date,
-            weightKg: Draft.parse(draft.weight),
-            waistCm: Draft.parse(draft.waist),
-            hipCm: Draft.parse(draft.hip),
-            chestCm: Draft.parse(draft.chest),
-            armCm: Draft.parse(draft.arm),
-            thighCm: Draft.parse(draft.thigh),
-            neckCm: Draft.parse(draft.neck),
-            bodyFatPct: Draft.parse(draft.bodyFat)
-        )
-        context.insert(measurement)
+        upsertDraft()
         try? context.save()
         SyncService.shared.syncNow()
 
-        // Peso nuevo: actualiza el perfil y ofrece recalcular las metas.
-        if let weight = measurement.weightKg, GoalsStore.shared.profile != nil {
+        // Solo si en ESTE guardado se ingresó un peso: actualiza el perfil y ofrece
+        // recalcular las metas (si solo se cargó otra medida, no toca el peso).
+        if let weight = Draft.parse(draft.weight), GoalsStore.shared.profile != nil {
             GoalsStore.shared.updateWeight(weight)
             recalcWeight = weight
         } else {
             dismiss()
+        }
+    }
+
+    /// Upsert por día: si el paciente ya registró una medición ese día, fusiona los
+    /// valores ingresados (los que se dejaron vacíos se conservan) en vez de crear
+    /// otra fila; si no, inserta una. No toca las que registró el nutricionista, y
+    /// normaliza la fecha al mediodía UTC para que el backend la agrupe por ese día.
+    private func upsertDraft() {
+        let day = MeasurementDay.normalizedToNoonUTC(draft.date)
+        let existing = sameDayPatientMeasurement(for: draft.date)
+        let m = existing ?? BodyMeasurement(measuredAt: day)
+        if let v = Draft.parse(draft.weight) { m.weightKg = v }
+        if let v = Draft.parse(draft.waist) { m.waistCm = v }
+        if let v = Draft.parse(draft.hip) { m.hipCm = v }
+        if let v = Draft.parse(draft.chest) { m.chestCm = v }
+        if let v = Draft.parse(draft.arm) { m.armCm = v }
+        if let v = Draft.parse(draft.thigh) { m.thighCm = v }
+        if let v = Draft.parse(draft.neck) { m.neckCm = v }
+        if let v = Draft.parse(draft.bodyFat) { m.bodyFatPct = v }
+        m.measuredAt = day
+        if existing == nil {
+            context.insert(m)
+        } else {
+            m.needsSync = true
+        }
+    }
+
+    /// Medición del mismo día calendario (local) que registró el propio paciente
+    /// (no el nutricionista), si existe.
+    private func sameDayPatientMeasurement(for date: Date) -> BodyMeasurement? {
+        let all = (try? context.fetch(FetchDescriptor<BodyMeasurement>())) ?? []
+        return all.first {
+            !$0.recordedByPro && Calendar.current.isDate($0.measuredAt, inSameDayAs: date)
         }
     }
 
