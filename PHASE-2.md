@@ -8,6 +8,40 @@
 
 ---
 
+## Estado (actualizado 2026-07-22)
+
+**M1, M2 y M3 completos y en producción.** El ciclo pro→paciente funciona
+end-to-end. Pendiente: validación final en el iPhone del usuario y arranque de M4.
+
+| Hito | Alcance | Estado | Notas |
+|---|---|---|---|
+| **M1** | E0 + E1 (vínculo e invitaciones) | ✅ prod (2026-07-20) | Verificado e2e: pro registrado (Paula) + aprobado por SQL, código aceptado en la app, vínculo `accepted` en ambos lados. Policy RLS de Storage por vínculo probada (revocar corta el acceso al instante) → cerró el riesgo #1. |
+| **M2** | E2 (portal de lectura) | ✅ prod (2026-07-20) | Bitácora (fotos vía URL firmada), mediciones (gráfico + tabla) y metas. Auditoría `viewed_*` verificada al abrir un paciente. |
+| **M3** | E3 + E4 (mediciones + metas del pro) | ✅ (2026-07-20/22) | Backend en prod; iOS con pull de mediciones + merge LWW de metas + banner. **2 bugs de sync corregidos el 2026-07-22 (PR #3)** y verificados e2e en el simulador (cold-launch aplica peso 73.5 y metas 1600 solo). |
+| **M4** | Wins 1–4 de `NEXT-WINS.md` | ⬜ no iniciado | Requiere confirmación tras validar M1–M3 en el teléfono. |
+
+**Producción aplicada (no revertible por CLI):** las 5 migraciones del §2 +
+`body_measurements.recorded_by`; Supabase Auth con `password_min_length = 12` y
+confirmación de email obligatoria; CORS del backend (`CORS_ORIGINS`) para el portal.
+
+**Bugs de sync corregidos (2026-07-22):** (1) el sync no corría en cold-launch de un
+usuario ya onboarded (dependía solo de `scenePhase .active`) → ahora se dispara al
+aparecer la sesión (`onChange(of: isAuthenticated)` en `RootView`); (2) `GoalsView` no
+refrescaba los steppers ante cambios externos → `onChange(of: goals)`. Gotcha:
+**los triggers de sync no pueden depender solo de `scenePhase`.**
+
+**Ramas/PRs reales** (difieren del §5, que quedó como plan): backend `feat/pro-links`
+(PR #2), `feat/pro-read` (PR #4), `feat/pro-write` + CORS; iOS `feat/mi-nutricionista`
+(PR #1), `feat/pro-sync` (E3+E4), `fix/sync-cold-launch` (PR #3); portal
+`feat/portal-mvp` / `feat/portal-read` / `feat/portal-write` (main **local**, sin remoto).
+
+**Pendiente humano (no automatizable):**
+- Reinstalar el build de `main` en el iPhone del usuario y revalidar el ciclo pro→paciente.
+- Registrar una comida **con foto** para cerrar la verificación del pipeline de fotos en el
+  portal (las comidas de prueba actuales no tienen foto — no es bug).
+
+---
+
 ## 0. Visión y principios
 
 **Objetivo**: que un nutricionista partner pueda acompañar a su paciente dentro de
@@ -235,12 +269,12 @@ del profesional quede auditado, para cumplir el estándar de datos sensibles
 - CA: la tabla es append-only (sin UPDATE/DELETE para el rol backend).
 
 Tareas backend:
-- [ ] Migraciones §2 (dry-run + push + verificación).
-- [ ] Módulo `professional/`: entidades de dominio (`ProfessionalLink` con su
+- [x] Migraciones §2 (dry-run + push + verificación).
+- [x] Módulo `professional/`: entidades de dominio (`ProfessionalLink` con su
       máquina de estados como lógica pura testeable), repos `pg`, guards, DTOs
       con `class-validator`.
-- [ ] `ProfessionalGuard` + verificación de vínculo con registro de auditoría.
-- [ ] Tests Jest: máquina de estados, guards (aprobado/no aprobado/revocado),
+- [x] `ProfessionalGuard` + verificación de vínculo con registro de auditoría.
+- [x] Tests Jest: máquina de estados, guards (aprobado/no aprobado/revocado),
       controllers con repos mockeados, expiración de códigos.
 
 ### E1 — Vínculo e invitaciones (e2e mínimo) 🔗
@@ -273,17 +307,17 @@ atiendo, para mantener mi lista limpia.
 - CA: revocación desde el portal con confirmación; el paciente deja de aparecer.
 
 Tareas iOS (`Features/Professional/`):
-- [ ] Sección "Mis nutricionistas" en `ProfileView` (card, mismo patrón visual
+- [x] Sección "Mis nutricionistas" en `ProfileView` (card, mismo patrón visual
       que Metas/Peso y medidas; ícono Lucide).
-- [ ] `LinkNutritionistSheet`: campo de código + preview + pantalla de
+- [x] `LinkNutritionistSheet`: campo de código + preview + pantalla de
       consentimiento; `MyNutritionistsView`: lista de vínculos activos +
       revocar por vínculo.
-- [ ] `BackendClient`: DTOs y endpoints `/v1/me/professional-*`.
-- [ ] Strings nuevos en `Localizable.xcstrings` (es tuteo + en desde el día 1 —
+- [x] `BackendClient`: DTOs y endpoints `/v1/me/professional-*`.
+- [x] Strings nuevos en `Localizable.xcstrings` (es tuteo + en desde el día 1 —
       no repetir la deuda de la Fase 1).
-- [ ] Tests Swift Testing: validación/normalización del código (lógica pura),
+- [x] Tests Swift Testing: validación/normalización del código (lógica pura),
       estados de la vista modelados como enum.
-- [ ] `xcodegen generate` + build de verificación.
+- [x] `xcodegen generate` + build de verificación.
 
 Tareas portal (mínimas en esta épica): registro + login + pantalla "Invitar
 paciente".
@@ -329,17 +363,18 @@ paciente, para evaluar el progreso.
 - CA: card de metas + datos (sexo, edad, altura, peso actual, objetivo, país).
 
 Tareas portal:
-- [ ] Setup: `@supabase/supabase-js`, interceptor `Authorization: Bearer` hacia
+- [x] Setup: `@supabase/supabase-js`, interceptor `Authorization: Bearer` hacia
       el backend, environments (URL backend), guard de rutas.
-- [ ] i18n nativo (`@angular/localize`) desde el inicio: todos los strings
+- [x] i18n nativo (`@angular/localize`) desde el inicio: todos los strings
       marcados, locale fuente español neutro; el MVP compila solo el build es.
-- [ ] Rutas: `/registro`, `/login`, `/pacientes`, `/pacientes/:id` (tabs Bitácora ·
+- [x] Rutas: `/registro`, `/login`, `/pacientes`, `/pacientes/:id` (tabs Bitácora ·
       Mediciones · Metas), `/invitar`.
-- [ ] Servicios API tipados (sin `any`) espejo de los DTOs del backend.
-- [ ] Diseño con `kpi-dashboard-design`; colores de macros consistentes con la
+- [x] Servicios API tipados (sin `any`) espejo de los DTOs del backend.
+- [x] Diseño con `kpi-dashboard-design`; colores de macros consistentes con la
       app (P verde, C ámbar, G azul).
-- [ ] Tests de servicios y componentes clave (Karma/Jest según scaffold).
-- [ ] CI simple del repo (lint + test + build) — este repo nace con gate.
+- [x] Tests de servicios y componentes clave (Vitest).
+- [ ] CI simple del repo (lint + test + build) — pendiente: el repo aún es
+      **local**, sin remoto donde correr el gate.
 
 ### E3 — El profesional registra mediciones ✍️
 
@@ -360,14 +395,13 @@ mi nutricionista, para tener una sola fuente de verdad.
   propia (regla existente de `GoalsStore.updateWeight`).
 
 Tareas:
-- [ ] Backend: `POST /v1/pro/patients/:id/measurements` (+ `recorded_by` en el
+- [x] Backend: `POST /v1/pro/patients/:id/measurements` (+ `recorded_by` en el
       repo y DTOs de respuesta de ambos lados).
-- [ ] iOS: **pull incremental de mediciones** en `SyncService` (hoy solo hay
+- [x] iOS: **pull incremental de mediciones** en `SyncService` (hoy solo hay
       backfill inicial + push): en cada sync, traer la primera página y fusionar
-      por `remoteID`. Extraer el merge a función pura testeable (de paso salda
-      la deuda de testabilidad de la Fase 1).
-- [ ] Portal: formulario en el tab Mediciones.
-- [ ] Tests: merge de mediciones (Swift Testing), endpoint + repo (Jest).
+      por `remoteID`. Merge extraído a `RemoteMerge` (función pura testeable).
+- [x] Portal: formulario en el tab Mediciones.
+- [x] Tests: merge de mediciones (Swift Testing), endpoint + repo (Jest).
 
 ### E4 — El profesional ajusta metas 🎯
 
@@ -388,13 +422,13 @@ mis metas, para no descubrirlo por sorpresa en el anillo de Hoy.
   wins con `updated_at`; regla documentada en el código).
 
 Tareas:
-- [ ] Backend: DTO acotado de metas + use-case (cálculo recomendado se muestra
+- [x] Backend: DTO acotado de metas + use-case (cálculo recomendado se muestra
       client-side en el portal reutilizando la fórmula — puerto la lógica de
       `PlanCalculator` a TS o expongo los datos y calculo en Angular; decisión:
       **calcular en Angular**, es presentación, no dominio del backend).
-- [ ] iOS: en el sync, comparar metas remotas vs. locales con `updatedAt`;
-      aplicar + banner; test de la regla de merge (lógica pura).
-- [ ] Portal: tab Metas editable.
+- [x] iOS: en el sync, comparar metas remotas vs. locales con `updatedAt`;
+      aplicar + banner; test de la regla de merge (lógica pura, `RemoteMerge`).
+- [x] Portal: tab Metas editable.
 
 ### E5 — Próximos wins (backlog priorizado, post-MVP) 🚀
 
@@ -426,15 +460,17 @@ Ramas y PRs por repo (regla del proyecto: nunca directo a `main`):
 
 ## 6. Definition of Done (global, por PR)
 
-- [ ] Tests nuevos/actualizados en verde (Jest backend, Swift Testing iOS,
+> Checklist plantilla por PR. Se cumplió en todos los PRs de M1–M3 (E0–E4).
+
+- [x] Tests nuevos/actualizados en verde (Jest backend, Swift Testing iOS,
       specs Angular) + linter.
-- [ ] Migraciones aplicadas con dry-run previo y verificadas con `select`.
-- [ ] iOS: `xcodegen generate` + build de verificación con los skip-flags.
-- [ ] Sin secretos hardcodeados; env nuevas agregadas también al yaml de deploy
+- [x] Migraciones aplicadas con dry-run previo y verificadas con `select`.
+- [x] iOS: `xcodegen generate` + build de verificación con los skip-flags.
+- [x] Sin secretos hardcodeados; env nuevas agregadas también al yaml de deploy
       (el `--env-vars-file` REEMPLAZA todo) y a `.env.example`.
-- [ ] Strings de UI en es **y en** (String Catalog) — sin deuda de traducción.
-- [ ] Endpoints `/v1/pro/*` con auditoría verificada en un e2e.
-- [ ] Documentar decisiones no obvias en el código (el porqué, no el qué).
+- [x] Strings de UI en es **y en** (String Catalog) — sin deuda de traducción.
+- [x] Endpoints `/v1/pro/*` con auditoría verificada en un e2e.
+- [x] Documentar decisiones no obvias en el código (el porqué, no el qué).
 
 ## 7. Riesgos y mitigaciones
 
