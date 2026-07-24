@@ -39,6 +39,15 @@ struct AnalysisView: View {
         model.phase == .analyzing && !model.analyzedContext.isEmpty
     }
 
+    /// Con componentes ya detectados, el texto sin aplicar (o un reanálisis en
+    /// curso) convierte la acción principal en "Reanalizar": así el botón visible
+    /// sobre el teclado hace lo que el usuario espera al escribir contexto, en vez
+    /// de guardar y cerrar descartando lo escrito. El estado vacío (sin comida)
+    /// conserva su propio botón de reanálisis.
+    private var showsReanalyzeAction: Bool {
+        !model.components.isEmpty && (model.canReanalyze || isReanalyzing)
+    }
+
     var body: some View {
         List {
             photoSection
@@ -87,6 +96,11 @@ struct AnalysisView: View {
                 await model.analyze()
             }
         }
+        // Con un análisis rescatable, deslizar para cerrar descartaría la foto y
+        // los ajustes sin aviso (el sheet hace model = nil al cerrarse). Se bloquea
+        // el cierre por gesto para forzar la salida explícita por "Cancelar", que
+        // sí confirma. Mientras no hay nada que perder, el gesto queda libre.
+        .interactiveDismissDisabled(model.canSave)
     }
 
     // MARK: Secciones
@@ -289,14 +303,6 @@ struct AnalysisView: View {
                         .font(.caption)
                         .foregroundStyle(Color.dsOver)
                 }
-                if model.canReanalyze, dictation.state != .recording {
-                    Button {
-                        Task { await model.reanalyze() }
-                    } label: {
-                        Label("Reanalizar", systemImage: "arrow.clockwise")
-                    }
-                    .buttonStyle(.dsTinted)
-                }
             }
         }
     }
@@ -381,14 +387,24 @@ struct AnalysisView: View {
                 }
                 .animation(.default, value: totals.kcal)
             }
-            Button("Guardar comida") {
-                model.save(in: modelContext)
-                dismiss()
-                onSaved?()
+            if showsReanalyzeAction {
+                Button {
+                    Task { await model.reanalyze() }
+                } label: {
+                    Label("Reanalizar", systemImage: "arrow.clockwise")
+                }
+                .buttonStyle(.dsPrimary)
+                .disabled(!model.canReanalyze)
+            } else {
+                Button("Guardar comida") {
+                    model.save(in: modelContext)
+                    dismiss()
+                    onSaved?()
+                }
+                .buttonStyle(.dsPrimary)
+                .disabled(!model.canSave || model.phase != .done)
+                .sensoryFeedback(.success, trigger: model.phase)
             }
-            .buttonStyle(.dsPrimary)
-            .disabled(!model.canSave || model.phase != .done)
-            .sensoryFeedback(.success, trigger: model.phase)
         }
         .padding(.horizontal, 20)
         .padding(.top, 12)
