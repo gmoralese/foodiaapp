@@ -75,6 +75,12 @@ nonisolated final class NutritionDatabase: Sendable {
         foods = list.foods
     }
 
+    /// Inicializador con catálogo explícito, para tests deterministas que no
+    /// dependen del `nutrition.json` empaquetado.
+    init(foods: [FoodItem]) {
+        self.foods = foods
+    }
+
     /// Cruza las etiquetas de Vision con la base local y devuelve los alimentos
     /// candidatos ordenados por confianza.
     func matches(for candidates: [FoodCandidate]) -> [FoodMatch] {
@@ -97,35 +103,23 @@ nonisolated final class NutritionDatabase: Sendable {
         return best.values.sorted { $0.confidence > $1.confidence }
     }
 
-    /// Mejor match para un nombre libre en inglés devuelto por el VLM
-    /// (p. ej. "white rice", "fried egg"). Puntúa por solapamiento de palabras.
+    /// Alimento local cuyo nombre o alias coincide EXACTAMENTE con `rawName`
+    /// (normalizado). Es una tabla canónica de ingredientes curados, no un
+    /// matcher difuso: si el nombre no está tal cual, devuelve nil y el llamador
+    /// conserva lo que estimó el modelo, que ya entiende de platos.
+    ///
+    /// Antes puntuaba por solapamiento de palabras y cualquier score > 0 ganaba,
+    /// así que un plato como "ají de gallina" terminaba en "puré de papas" por
+    /// compartir la palabra "de" (las stopwords eran solo en inglés). La decisión
+    /// de qué es cada plato es del modelo; la base solo aporta valores fijos para
+    /// los ingredientes genéricos que sí tiene catalogados.
     func bestMatch(forName rawName: String) -> FoodItem? {
-        let stopwords: Set<String> = ["with", "and", "the", "of", "a", "an", "in", "on", "some"]
         let name = Self.normalize(rawName)
-        let nameWords = Set(name.split(separator: " ").map(String.init)).subtracting(stopwords)
-        guard !nameWords.isEmpty else { return nil }
-
-        var best: (food: FoodItem, score: Double)?
-        for food in foods {
-            var score = 0.0
-            for alias in food.aliases + [Self.normalize(food.name)] {
-                if alias == name {
-                    score = max(score, 10)
-                    continue
-                }
-                let aliasWords = Set(alias.split(separator: " ").map(String.init)).subtracting(stopwords)
-                guard !aliasWords.isEmpty else { continue }
-                let overlap = aliasWords.intersection(nameWords).count
-                guard overlap > 0 else { continue }
-                // Bonus si el alias completo está contenido en el nombre.
-                let full = aliasWords.isSubset(of: nameWords) ? 0.5 : 0
-                score = max(score, Double(overlap) + full)
-            }
-            if score > 0, score > (best?.score ?? 0) {
-                best = (food, score)
-            }
+        guard !name.isEmpty else { return nil }
+        return foods.first { food in
+            Self.normalize(food.name) == name
+                || food.aliases.contains { Self.normalize($0) == name }
         }
-        return best?.food
     }
 
     /// Búsqueda manual por nombre en español o alias en inglés.
